@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>hexo yilia主题配置踩坑 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="访问量的统计和显示这边给出的方法是用不蒜子，先在\themes\yilia\layout_partial里面找到after-footer.ejs，引入脚本，放在最后就行了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo yilia主题配置踩坑">
+<meta property="og:url" content="http://example.com/2020/09/03/hexo-yilia%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="访问量的统计和显示这边给出的方法是用不蒜子，先在\themes\yilia\layout_partial里面找到after-footer.ejs，引入脚本，放在最后就行了。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-03T06:11:36.681Z">
+<meta property="article:modified_time" content="2020-09-03T05:38:24.268Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-hexo-yilia主题配置踩坑" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/03/hexo-yilia%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/" class="article-date">
+  <time datetime="2020-09-03T06:11:36.681Z" itemprop="datePublished">2020-09-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hexo yilia主题配置踩坑
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="访问量的统计和显示"><a href="#访问量的统计和显示" class="headerlink" title="访问量的统计和显示"></a>访问量的统计和显示</h2><p>这边给出的方法是用不蒜子，先在\themes\yilia\layout_partial里面找到after-footer.ejs，引入脚本，放在最后就行了。</p>
+<a id="more"></a>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script async src&#x3D;&quot;https:&#x2F;&#x2F;busuanzi.ibruce.info&#x2F;busuanzi&#x2F;2.3&#x2F;busuanzi.pure.mini.js&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>具体阅读量的显示位置比较随意，我放在头像下面，想要插在不同的位置F12寻找到对应的元素</p>
+<p>再找到对应的ejs修改插入，比较难找比较困难。</p>
+<ul>
+<li>left-col.ejs:(整体代码如下) –统计阅读总理</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">&lt;% var defaultBg &#x3D; &#39;#4d4d4d&#39;; %&gt;</span><br><span class="line">&lt;div class&#x3D;&quot;overlay&quot; style&#x3D;&quot;background: &lt;%&#x3D; theme.style &amp;&amp; theme.style.header ? theme.style.header : defaultBg %&gt;&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;div class&#x3D;&quot;intrude-less&quot;&gt;</span><br><span class="line">	&lt;header id&#x3D;&quot;header&quot; class&#x3D;&quot;inner&quot;&gt;</span><br><span class="line">		&lt;a href&#x3D;&quot;&lt;%&#x3D;theme.root%&gt;&quot; class&#x3D;&quot;profilepic&quot;&gt;</span><br><span class="line">			&lt;img src&#x3D;&quot;&lt;%&#x3D;theme.avatar%&gt;&quot; class&#x3D;&quot;js-avatar&quot;&gt;</span><br><span class="line">		&lt;&#x2F;a&gt;</span><br><span class="line">		&lt;hgroup&gt;</span><br><span class="line">		  &lt;h1 class&#x3D;&quot;header-author&quot;&gt;&lt;a href&#x3D;&quot;&lt;%&#x3D;theme.root%&gt;&quot;&gt;&lt;%&#x3D;theme.author%&gt;&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;</span><br><span class="line">		&lt;&#x2F;hgroup&gt;</span><br><span class="line">		&lt;% if (theme.subtitle)&#123; %&gt;</span><br><span class="line">		&lt;p class&#x3D;&quot;header-subtitle&quot;&gt;&lt;%&#x3D;theme.subtitle%&gt;&lt;&#x2F;p&gt;</span><br><span class="line">		&lt;%&#125;%&gt;</span><br><span class="line">		&lt;nav class&#x3D;&quot;header-smart-menu&quot; style&#x3D;&quot;margin:0;&quot;&gt;</span><br><span class="line">		&lt;span id&#x3D;&quot;busuanzi_container_site_pv&quot; style&#x3D;&quot;color:#b0a0aa;font-size:14px;&quot;&gt;总访问量&lt;span id&#x3D;&quot;busuanzi_value_site_pv&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">		&lt;&#x2F;nav&gt;</span><br><span class="line">			&lt;ul&gt;</span><br><span class="line">			&lt;% for (var i in theme.menu)&#123; %&gt;</span><br><span class="line">				&lt;li&gt;&lt;a href&#x3D;&quot;&lt;%- url_for(theme.menu[i]) %&gt;&quot;&gt;&lt;%&#x3D; i %&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">	        &lt;%&#125;%&gt;</span><br><span class="line">			&lt;&#x2F;ul&gt;</span><br><span class="line">		&lt;&#x2F;nav&gt;</span><br><span class="line">		&lt;nav class&#x3D;&quot;header-smart-menu&quot;&gt;</span><br><span class="line">    		&lt;% for (var i in theme.smart_menu)&#123; %&gt;</span><br><span class="line">    			&lt;% if(theme.smart_menu[i])&#123; %&gt;</span><br><span class="line">    			&lt;a q-on&#x3D;&quot;click: openSlider(e, &#39;&lt;%-i%&gt;&#39;)&quot; href&#x3D;&quot;javascript:void(0)&quot;&gt;&lt;%&#x3D; theme.smart_menu[i] %&gt;&lt;&#x2F;a&gt;</span><br><span class="line">    			&lt;% &#125; %&gt;</span><br><span class="line">            &lt;%&#125;%&gt;</span><br><span class="line">		&lt;&#x2F;nav&gt;</span><br><span class="line">		</span><br><span class="line"></span><br><span class="line">		&lt;nav class&#x3D;&quot;header-nav&quot;&gt;</span><br><span class="line">			&lt;div class&#x3D;&quot;social&quot;&gt;</span><br><span class="line">				&lt;% for (var i in theme.subnav)&#123; %&gt;</span><br><span class="line">					&lt;a class&#x3D;&quot;&lt;%&#x3D; i %&gt;&quot; target&#x3D;&quot;_blank&quot; href&#x3D;&quot;&lt;%- url_for(theme.subnav[i]) %&gt;&quot; title&#x3D;&quot;&lt;%&#x3D; i %&gt;&quot;&gt;&lt;i class&#x3D;&quot;icon-&lt;%&#x3D; i %&gt;&quot;&gt;&lt;&#x2F;i&gt;&lt;&#x2F;a&gt;</span><br><span class="line">		        &lt;%&#125;%&gt;</span><br><span class="line">			&lt;&#x2F;div&gt;</span><br><span class="line">		&lt;&#x2F;nav&gt;</span><br><span class="line">	&lt;&#x2F;header&gt;		</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>article.ejs:(整体代码如下) –统计单篇阅读量</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br></pre></td><td class="code"><pre><span class="line">&lt;article id&#x3D;&quot;&lt;%&#x3D; post.layout %&gt;-&lt;%&#x3D; post.slug %&gt;&quot; class&#x3D;&quot;article article-type-&lt;%&#x3D; post.layout %&gt; &lt;%if(index)&#123;%&gt; article-index&lt;%&#125;%&gt;&quot; itemscope itemprop&#x3D;&quot;blogPost&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;article-inner&quot;&gt;</span><br><span class="line">    &lt;% if (post.link || post.title)&#123; %&gt;</span><br><span class="line">      &lt;header class&#x3D;&quot;article-header&quot;&gt;</span><br><span class="line">        &lt;%- partial(&#39;post&#x2F;title&#39;, &#123;class_name: &#39;article-title&#39;&#125;) %&gt;</span><br><span class="line">        &lt;% if (!post.noDate)&#123; %&gt;</span><br><span class="line">        &lt;%- partial(&#39;post&#x2F;date&#39;, &#123;class_name: &#39;archive-article-date&#39;, date_format: null&#125;) %&gt;</span><br><span class="line">        &lt;% &#125; %&gt;</span><br><span class="line">      &lt;&#x2F;header&gt;</span><br><span class="line">    &lt;% &#125; %&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;article-entry&quot; itemprop&#x3D;&quot;articleBody&quot;&gt;</span><br><span class="line">      &lt;% if (post.excerpt &amp;&amp; index)&#123; %&gt;</span><br><span class="line">        &lt;%- post.excerpt %&gt;</span><br><span class="line">        &lt;% if (theme.excerpt_link) &#123; %&gt;</span><br><span class="line">          &lt;a class&#x3D;&quot;article-more-a&quot; href&#x3D;&quot;&lt;%- url_for(post.path) %&gt;#more&quot;&gt;&lt;%&#x3D; theme.excerpt_link %&gt; &gt;&gt;&lt;&#x2F;a&gt;</span><br><span class="line">        &lt;% &#125; %&gt;</span><br><span class="line">      &lt;% &#125; else &#123; %&gt;</span><br><span class="line">    &lt;div id&#x3D;&quot;busuanzi_container_page_pv&quot; style&#x3D;&quot;font_size:16px;color:rgb(153,153,153);line-height:1.8em;&quot;&gt;总阅读量&lt;span id&#x3D;&quot;busuanzi_value_page_pv&quot;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;%- post.content %&gt;</span><br><span class="line">      &lt;% &#125; %&gt;</span><br><span class="line"></span><br><span class="line">      &lt;% if ((theme.reward_type &#x3D;&#x3D;&#x3D; 2 || (theme.reward_type &#x3D;&#x3D;&#x3D; 1 &amp;&amp; post.reward)) &amp;&amp; !index)&#123; %&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;page-reward&quot;&gt;</span><br><span class="line">          &lt;a href&#x3D;&quot;javascript:;&quot; class&#x3D;&quot;page-reward-btn tooltip-top&quot;&gt;</span><br><span class="line">            &lt;div class&#x3D;&quot;tooltip tooltip-east&quot;&gt;</span><br><span class="line">            &lt;span class&#x3D;&quot;tooltip-item&quot;&gt;</span><br><span class="line">              赏</span><br><span class="line">            &lt;&#x2F;span&gt;</span><br><span class="line">            &lt;span class&#x3D;&quot;tooltip-content&quot;&gt;</span><br><span class="line">              &lt;span class&#x3D;&quot;tooltip-text&quot;&gt;</span><br><span class="line">                &lt;span class&#x3D;&quot;tooltip-inner&quot;&gt;</span><br><span class="line">                  &lt;p class&#x3D;&quot;reward-p&quot;&gt;&lt;i class&#x3D;&quot;icon icon-quo-left&quot;&gt;&lt;&#x2F;i&gt;&lt;%&#x3D; theme.reward_wording%&gt;&lt;i class&#x3D;&quot;icon icon-quo-right&quot;&gt;&lt;&#x2F;i&gt;&lt;&#x2F;p&gt;</span><br><span class="line">                  &lt;div class&#x3D;&quot;reward-box&quot;&gt;</span><br><span class="line">                    &lt;% if(theme.alipay) &#123;%&gt;</span><br><span class="line">                    &lt;div class&#x3D;&quot;reward-box-item&quot;&gt;</span><br><span class="line">                      &lt;img class&#x3D;&quot;reward-img&quot; src&#x3D;&quot;&lt;%&#x3D; theme.alipay%&gt;&quot;&gt;</span><br><span class="line">                      &lt;span class&#x3D;&quot;reward-type&quot;&gt;支付宝&lt;&#x2F;span&gt;</span><br><span class="line">                    &lt;&#x2F;div&gt;</span><br><span class="line">                    &lt;% &#125; %&gt;</span><br><span class="line">                    &lt;% if(theme.weixin) &#123;%&gt;</span><br><span class="line">                    &lt;div class&#x3D;&quot;reward-box-item&quot;&gt;</span><br><span class="line">                      &lt;img class&#x3D;&quot;reward-img&quot; src&#x3D;&quot;&lt;%&#x3D; theme.weixin%&gt;&quot;&gt;</span><br><span class="line">                      &lt;span class&#x3D;&quot;reward-type&quot;&gt;微信&lt;&#x2F;span&gt;</span><br><span class="line">                    &lt;&#x2F;div&gt;</span><br><span class="line">                    &lt;% &#125; %&gt;</span><br><span class="line">                  &lt;&#x2F;div&gt;</span><br><span class="line">                &lt;&#x2F;span&gt;</span><br><span class="line">              &lt;&#x2F;span&gt;</span><br><span class="line">            &lt;&#x2F;span&gt;</span><br><span class="line">          &lt;&#x2F;div&gt;</span><br><span class="line">          &lt;&#x2F;a&gt;</span><br><span class="line">        &lt;&#x2F;div&gt;</span><br><span class="line">      &lt;% &#125; %&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;article-info article-info-index&quot;&gt;</span><br><span class="line">      &lt;%if(post.top)&#123;%&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;article-pop-out tagcloud&quot;&gt;</span><br><span class="line">          &lt;i class&#x3D;&quot;icon-tuding&quot;&gt;&lt;&#x2F;i&gt;</span><br><span class="line">          &lt;a class&#x3D;&quot;article-tag-list-link color3&quot;&gt;置顶&lt;&#x2F;a&gt;</span><br><span class="line">        &lt;&#x2F;div&gt;</span><br><span class="line">      &lt;% &#125; %&gt;</span><br><span class="line">      &lt;%- partial(&#39;post&#x2F;tag&#39;) %&gt;</span><br><span class="line">      &lt;%- partial(&#39;post&#x2F;category&#39;) %&gt;</span><br><span class="line">      &lt;% if (index &amp;&amp; theme.show_all_link)&#123; %&gt;</span><br><span class="line">        &lt;p class&#x3D;&quot;article-more-link&quot;&gt;</span><br><span class="line">          &lt;a class&#x3D;&quot;article-more-a&quot; href&#x3D;&quot;&lt;%- url_for(post.path) %&gt;&quot;&gt;&lt;%&#x3D; theme.show_all_link %&gt; &gt;&gt;&lt;&#x2F;a&gt;</span><br><span class="line">        &lt;&#x2F;p&gt;</span><br><span class="line">      &lt;% &#125; %&gt;</span><br><span class="line"></span><br><span class="line">      &lt;% if (!index &amp;&amp; theme.share_jia)&#123; %&gt;</span><br><span class="line">        &lt;%- partial(&#39;post&#x2F;share&#39;) %&gt;</span><br><span class="line">      &lt;% &#125; %&gt;</span><br><span class="line">      &lt;div class&#x3D;&quot;clearfix&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;article&gt;</span><br><span class="line">&lt;% if (!index)&#123; %&gt;</span><br><span class="line">  &lt;%- partial(&#39;post&#x2F;nav&#39;) %&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br><span class="line">&lt;%- partial(&#39;_partial&#x2F;aside&#39;) %&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;% if (!index &amp;&amp; post.comments)&#123; %&gt;</span><br><span class="line">  &lt;% if (theme.duoshuo)&#123; %&gt;</span><br><span class="line">  &lt;%- partial(&#39;post&#x2F;duoshuo&#39;, &#123;</span><br><span class="line">      key: post.slug,</span><br><span class="line">      title: post.title,</span><br><span class="line">      url: config.url+url_for(post.path)</span><br><span class="line">    &#125;) %&gt;</span><br><span class="line">  &lt;% &#125; %&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;% if (theme.wangyiyun)&#123; %&gt;</span><br><span class="line">  &lt;%- partial(&#39;post&#x2F;wangyiyun&#39;, &#123;</span><br><span class="line">      key: post.slug,</span><br><span class="line">      title: post.title,</span><br><span class="line">      url: config.url+url_for(post.path)</span><br><span class="line">    &#125;) %&gt;</span><br><span class="line">  &lt;% &#125; %&gt;</span><br><span class="line"></span><br><span class="line">  &lt;% if (theme.changyan_appid &amp;&amp; theme.changyan_conf)&#123; %&gt;</span><br><span class="line">  &lt;%- partial(&#39;post&#x2F;changyan&#39;, &#123;</span><br><span class="line">      key: post.slug,</span><br><span class="line">      title: post.title,</span><br><span class="line">      url: config.url+url_for(post.path)</span><br><span class="line">    &#125;) %&gt;</span><br><span class="line">  &lt;% &#125; %&gt;</span><br><span class="line"></span><br><span class="line">  &lt;% if (theme.disqus || config.disqus_shortname)&#123; %&gt;</span><br><span class="line">    &lt;section id&#x3D;&quot;comments&quot;&gt;</span><br><span class="line">      &lt;div id&#x3D;&quot;disqus_thread&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">        &#x2F;* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * *&#x2F;</span><br><span class="line">        var disqus_shortname &#x3D; &#39;&lt;%&#x3D; theme.disqus || config.disqus_shortname %&gt;&#39;; &#x2F;&#x2F; required: replace example with your forum shortname</span><br><span class="line"></span><br><span class="line">        &#x2F;* * * DON&#39;T EDIT BELOW THIS LINE * * *&#x2F;</span><br><span class="line">        (function() &#123;</span><br><span class="line">          var dsq &#x3D; document.createElement(&#39;script&#39;); dsq.type &#x3D; &#39;text&#x2F;javascript&#39;; dsq.async &#x3D; true;</span><br><span class="line">          dsq.src &#x3D; &#39;&#x2F;&#x2F;&#39; + disqus_shortname + &#39;.disqus.com&#x2F;embed.js&#39;;</span><br><span class="line">          (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);</span><br><span class="line">        &#125;)();</span><br><span class="line">      &lt;&#x2F;script&gt;</span><br><span class="line">      &lt;noscript&gt;Please enable JavaScript to view the &lt;a href&#x3D;&quot;https:&#x2F;&#x2F;disqus.com&#x2F;?ref_noscript&quot;&gt;comments powered by Disqus.&lt;&#x2F;a&gt;&lt;&#x2F;noscript&gt;</span><br><span class="line">    &lt;&#x2F;section&gt;</span><br><span class="line">  &lt;% &#125; %&gt;</span><br><span class="line"></span><br><span class="line">  &lt;% if (theme.gitment_owner &amp;&amp; theme.gitment_repo &amp;&amp;theme.gitment_oauth &amp;&amp; theme.gitment_oauth.client_id &amp;&amp; theme.gitment_oauth.client_secret)&#123; %&gt;</span><br><span class="line">  &lt;%- partial(&#39;post&#x2F;gitment&#39;, &#123;</span><br><span class="line">      key: post.slug,</span><br><span class="line">      title: post.title,</span><br><span class="line">      url: config.url+url_for(post.path)</span><br><span class="line">    &#125;) %&gt;</span><br><span class="line">  &lt;% &#125; %&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/09/03/hexo-yilia%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/" data-id="ckemevywc000974u8et2caobt" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/09/03/hexo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E6%B5%81%E4%B8%80%E8%A7%88/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          hexo网站搭建流一览
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/09/03/C++%E7%BB%93%E6%9E%84%E5%8C%96%E7%BC%96%E7%A8%8B%E7%AE%80%E5%8D%95%E6%96%87%E6%A1%A3%E6%95%B4%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">C++结构化编程简单整理</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/" rel="tag">VUE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/" rel="tag">数据科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/" rel="tag">数据科学基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%BD%91/" rel="tag">计网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E5%B7%A5%E4%BA%8C/" rel="tag">软工二</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/" style="font-size: 10px;">数据科学</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">数据科学基础</a> <a href="/tags/%E8%AE%A1%E7%BD%91/" style="font-size: 20px;">计网</a> <a href="/tags/%E8%BD%AF%E5%B7%A5%E4%BA%8C/" style="font-size: 20px;">软工二</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/03/%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3/">软工二需求文档</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/03/%E8%BD%AF%E5%B7%A5%E4%BA%8C%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/">软工二知识点整理</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/03/%E8%AF%A6%E7%BB%86%E7%94%A8%E4%BE%8B%E6%8F%8F%E8%BF%B0/">软工二用例文档</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/03/%E8%AE%A1%E7%BD%91%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%BF%AD%E4%BB%A3%E4%BA%8C%E5%BC%80%E5%8F%91/">计网小程序迭代</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/03/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80%E5%A4%A7%E4%BD%9C%E4%B8%9A%E9%A1%B9%E7%9B%AE%E8%AE%BE%E8%AE%A1/">数据科学基础大作业</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

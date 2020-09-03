@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>hexo网站搭建流一览 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="本文简单为自己梳理一下整体hexo博客搭建流程，如果有朋友想以此方式进行尝试基本上确保可行。 本文基于b站up主CodeSheep的视频材料">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo网站搭建流一览">
+<meta property="og:url" content="http://example.com/2020/09/03/hexo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E6%B5%81%E4%B8%80%E8%A7%88/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="本文简单为自己梳理一下整体hexo博客搭建流程，如果有朋友想以此方式进行尝试基本上确保可行。 本文基于b站up主CodeSheep的视频材料">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-03T06:11:36.687Z">
+<meta property="article:modified_time" content="2020-09-03T05:38:17.148Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-hexo网站搭建流一览" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/03/hexo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E6%B5%81%E4%B8%80%E8%A7%88/" class="article-date">
+  <time datetime="2020-09-03T06:11:36.687Z" itemprop="datePublished">2020-09-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hexo网站搭建流一览
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文简单为自己梳理一下整体hexo博客搭建流程，如果有朋友想以此方式进行尝试基本上确保可行。</p>
+<p>本文基于b站up主CodeSheep的视频材料</p>
+<a id="more"></a>
+
+<h4 id="Step1-下载nodejs"><a href="#Step1-下载nodejs" class="headerlink" title="Step1: 下载nodejs"></a>Step1: 下载nodejs</h4><p>踩坑：</p>
+<ul>
+<li>建议下载环节参考网络统一教程，可以从nodejs.org上面下载软件包</li>
+<li>官网下载LTS版本安装包，相对于Current版本更为稳定。<strong>特别强调：v14的nodejs当前不支持hexo d命令，无法部署至远端</strong></li>
+<li>官网下载nodejs安装包可以保留，以便后续问题出现进行补丁操作</li>
+<li>可以采用nvm包管理器。因为需要转url地址，故不建议小白采用这种方法</li>
+</ul>
+<h4 id="Step2-安装npm淘宝镜像"><a href="#Step2-安装npm淘宝镜像" class="headerlink" title="Step2: 安装npm淘宝镜像"></a>Step2: 安装npm淘宝镜像</h4><p>npm install -g cnpm –registry=<a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a></p>
+<p>踩坑：</p>
+<ul>
+<li>进入命令行root模式，mac端用户输入sudo sw，windows端直接cmd打开命令行即可</li>
+</ul>
+<h4 id="Step3-安装hexo博客对应插件"><a href="#Step3-安装hexo博客对应插件" class="headerlink" title="Step3: 安装hexo博客对应插件"></a>Step3: 安装hexo博客对应插件</h4><p>cnpm install -g hexo-clli</p>
+<p>hexo基于node实现，可以在命令行输入hexo -v查看hexo版本判断安装情况</p>
+<h4 id="Step4-建立blog空文档"><a href="#Step4-建立blog空文档" class="headerlink" title="Step4: 建立blog空文档"></a>Step4: 建立blog空文档</h4><p>hexo初始搭建环境必须要求是空文档</p>
+<p>此后所有hexo搭建都于此空文档中实现，后续过程出错时可以直接删除空文档，人生重来</p>
+<h4 id="Step5-hexo建立"><a href="#Step5-hexo建立" class="headerlink" title="Step5: hexo建立"></a>Step5: hexo建立</h4><p>进入blog目录下，在root模式下执行命令行命令 hexo init（mac端为sudo hexo init）实现hexo框架搭建</p>
+<p>博客启动 hexo server/s</p>
+<p>新建博文 hexo new “{title}”</p>
+<p>生成博文 hexo generate</p>
+<p>文章部署 hexo deploy</p>
+<h4 id="Step6-hexo部署"><a href="#Step6-hexo部署" class="headerlink" title="Step6: hexo部署"></a>Step6: hexo部署</h4><p>这里采用GitHub部署</p>
+<p>新建新项目，项目昵称一定为 {你的昵称}.github.io  ; 项目描述任意</p>
+<p>在blog目录下安装git插件</p>
+<ul>
+<li>cnpm install hexo-deployer-git –save</li>
+</ul>
+<p>设置blog中_config.yml文件</p>
+<p>修改文末deployment项中</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">repo:</span> &#123;<span class="string">your</span> <span class="string">github</span> <span class="string">address</span>&#125;</span><br><span class="line"><span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<p>然后通过hexo deploy部署</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/09/03/hexo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E6%B5%81%E4%B8%80%E8%A7%88/" data-id="ckemevywj000c74u81nh6ecmu" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/09/03/Linux%E6%9C%9F%E6%9C%AB%E9%87%8D%E7%82%B9%E5%9B%9E%E9%A1%BE/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Linux期末
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/09/03/hexo-yilia%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">hexo yilia主题配置踩坑</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/" rel="tag">VUE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/" rel="tag">数据科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/" rel="tag">数据科学基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%BD%91/" rel="tag">计网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E5%B7%A5%E4%BA%8C/" rel="tag">软工二</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/" style="font-size: 10px;">数据科学</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">数据科学基础</a> <a href="/tags/%E8%AE%A1%E7%BD%91/" style="font-size: 20px;">计网</a> <a href="/tags/%E8%BD%AF%E5%B7%A5%E4%BA%8C/" style="font-size: 20px;">软工二</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/03/%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3/">软工二需求文档</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/03/%E8%BD%AF%E5%B7%A5%E4%BA%8C%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/">软工二知识点整理</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/03/%E8%AF%A6%E7%BB%86%E7%94%A8%E4%BE%8B%E6%8F%8F%E8%BF%B0/">软工二用例文档</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/03/%E8%AE%A1%E7%BD%91%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%BF%AD%E4%BB%A3%E4%BA%8C%E5%BC%80%E5%8F%91/">计网小程序迭代</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/03/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80%E5%A4%A7%E4%BD%9C%E4%B8%9A%E9%A1%B9%E7%9B%AE%E8%AE%BE%E8%AE%A1/">数据科学基础大作业</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

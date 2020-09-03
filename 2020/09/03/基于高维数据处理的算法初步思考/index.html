@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>高维初步思考 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="相关系数Rearson相关系数$$r_{xy}&#x3D;\frac{n\sum_{i}X_{i}Y_{i}-\sum_{i}X_{i}\sum_{i}Y_{i}}{\sqrt{n\sum_{i}X_{i}^{2}-(\sum_{i}X_{i})^{2}}\sqrt{n\sum_{i}Y_{i}^{2}-(\sum_{i}Y_{i})^{2}}}$$ 判别两个变量的相关系数，划分分聚类 分析单个同学提交次数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高维初步思考">
+<meta property="og:url" content="http://example.com/2020/09/03/%E5%9F%BA%E4%BA%8E%E9%AB%98%E7%BB%B4%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E7%9A%84%E7%AE%97%E6%B3%95%E5%88%9D%E6%AD%A5%E6%80%9D%E8%80%83/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="相关系数Rearson相关系数$$r_{xy}&#x3D;\frac{n\sum_{i}X_{i}Y_{i}-\sum_{i}X_{i}\sum_{i}Y_{i}}{\sqrt{n\sum_{i}X_{i}^{2}-(\sum_{i}X_{i})^{2}}\sqrt{n\sum_{i}Y_{i}^{2}-(\sum_{i}Y_{i})^{2}}}$$ 判别两个变量的相关系数，划分分聚类 分析单个同学提交次数">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-03T06:11:36.719Z">
+<meta property="article:modified_time" content="2020-09-03T05:41:00.576Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="数据科学">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-基于高维数据处理的算法初步思考" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/03/%E5%9F%BA%E4%BA%8E%E9%AB%98%E7%BB%B4%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E7%9A%84%E7%AE%97%E6%B3%95%E5%88%9D%E6%AD%A5%E6%80%9D%E8%80%83/" class="article-date">
+  <time datetime="2020-09-03T06:11:36.719Z" itemprop="datePublished">2020-09-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      高维初步思考
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="相关系数"><a href="#相关系数" class="headerlink" title="相关系数"></a>相关系数</h2><h3 id="Rearson相关系数"><a href="#Rearson相关系数" class="headerlink" title="Rearson相关系数"></a>Rearson相关系数</h3><p>$$<br>r_{xy}=\frac{n\sum_{i}X_{i}Y_{i}-\sum_{i}X_{i}\sum_{i}Y_{i}}<br>{\sqrt{n\sum_{i}X_{i}^{2}-(\sum_{i}X_{i})^{2}}<br>\sqrt{n\sum_{i}Y_{i}^{2}-(\sum_{i}Y_{i})^{2}}}<br>$$</p>
+<p>判别两个变量的相关系数，划分分聚类</p>
+<p>分析单个同学提交次数、提交时间、代码行数、代码复杂度、代码得分情况之间的联系。</p>
+<p>如：</p>
+<p>某同学对一道题目代码复杂度越高代码得分越高 —— 正相关系数大 —— 不大可取；</p>
+<p>某同学对一道题目代码复杂度变化不大得分越高 —— 无相关性 —— 较为可取</p>
+<p>某同学对一道题目代码行数增加且复杂度上升 —— 代码行数和复杂度正相关 —— 不大可取</p>
+<a id="more"></a>
+
+<h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><h3 id="一元线性回顾-—-最小二乘估计"><a href="#一元线性回顾-—-最小二乘估计" class="headerlink" title="一元线性回顾 — 最小二乘估计"></a>一元线性回顾 — 最小二乘估计</h3><p>可以考虑用于分析题目难度和学生个人能力水平</p>
+<p>一道题目所有学生的平均代码行数和复杂度与目标同学的代码行数和复杂度进行线性回归，斜率越低，目标同学代码能力越强</p>
+<h3 id="多元线性回归"><a href="#多元线性回归" class="headerlink" title="多元线性回归"></a>多元线性回归</h3><p>提交时间、代码行数、代码复杂度等等多元回归</p>
+<p>具体能够表明学生什么能力还没有想法、有待考究</p>
+<h3 id="非线性回归"><a href="#非线性回归" class="headerlink" title="非线性回归"></a>非线性回归</h3><p>基于一元线性回归，仅考虑一元非线性回归。用法与一元线性回归类似。算法复杂度有待考量</p>
+<h2 id="数据降维"><a href="#数据降维" class="headerlink" title="数据降维"></a>数据降维</h2><h3 id="主成分分析PCA"><a href="#主成分分析PCA" class="headerlink" title="主成分分析PCA"></a>主成分分析PCA</h3><p>可以用于对各方面学生能能力进行评估打分后计算统一数据</p>
+<h3 id="线性判别分析-LDA"><a href="#线性判别分析-LDA" class="headerlink" title="线性判别分析 LDA"></a>线性判别分析 LDA</h3><p>可以用于判断新同学属于哪一水平能力（可以大致划分同学能力、分类聚类</p>
+<h3 id="局部线性嵌入-LLE"><a href="#局部线性嵌入-LLE" class="headerlink" title="局部线性嵌入 LLE"></a>局部线性嵌入 LLE</h3><p>我不知道该怎么算，感觉考试也不可能考，实现起来也比较困难</p>
+<h2 id="回归分析-处理方法"><a href="#回归分析-处理方法" class="headerlink" title="回归分析 处理方法"></a>回归分析 处理方法</h2><h3 id="牛顿法"><a href="#牛顿法" class="headerlink" title="牛顿法"></a>牛顿法</h3><h3 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h3><h3 id="求解非线性回归"><a href="#求解非线性回归" class="headerlink" title="求解非线性回归"></a>求解非线性回归</h3><p>不知道怎么教计算机算偏导</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/09/03/%E5%9F%BA%E4%BA%8E%E9%AB%98%E7%BB%B4%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E7%9A%84%E7%AE%97%E6%B3%95%E5%88%9D%E6%AD%A5%E6%80%9D%E8%80%83/" data-id="ckemevyxi000p74u8gxht1308" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/" rel="tag">数据科学</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/09/03/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80%E5%A4%A7%E4%BD%9C%E4%B8%9A%E9%A1%B9%E7%9B%AE%E8%AE%BE%E8%AE%A1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          数据科学基础大作业
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/09/03/%E4%BA%92%E8%81%94%E7%BD%91%E8%AE%A1%E7%AE%97%E5%AE%9E%E9%AA%8C%E6%B5%8B%E8%AF%95%E8%80%83%E7%82%B9%E6%95%B4%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">互联网计算常用口令</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/" rel="tag">VUE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/" rel="tag">数据科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/" rel="tag">数据科学基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%BD%91/" rel="tag">计网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E5%B7%A5%E4%BA%8C/" rel="tag">软工二</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/" style="font-size: 10px;">数据科学</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">数据科学基础</a> <a href="/tags/%E8%AE%A1%E7%BD%91/" style="font-size: 20px;">计网</a> <a href="/tags/%E8%BD%AF%E5%B7%A5%E4%BA%8C/" style="font-size: 20px;">软工二</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/03/%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3/">软工二需求文档</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/03/%E8%BD%AF%E5%B7%A5%E4%BA%8C%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/">软工二知识点整理</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/03/%E8%AF%A6%E7%BB%86%E7%94%A8%E4%BE%8B%E6%8F%8F%E8%BF%B0/">软工二用例文档</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/03/%E8%AE%A1%E7%BD%91%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%BF%AD%E4%BB%A3%E4%BA%8C%E5%BC%80%E5%8F%91/">计网小程序迭代</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/03/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80%E5%A4%A7%E4%BD%9C%E4%B8%9A%E9%A1%B9%E7%9B%AE%E8%AE%BE%E8%AE%A1/">数据科学基础大作业</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

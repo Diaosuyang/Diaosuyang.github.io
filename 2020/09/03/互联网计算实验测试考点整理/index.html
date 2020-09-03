@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>互联网计算常用口令 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="常用展示口令展示路由表 Router#show ip route">
+<meta property="og:type" content="article">
+<meta property="og:title" content="互联网计算常用口令">
+<meta property="og:url" content="http://example.com/2020/09/03/%E4%BA%92%E8%81%94%E7%BD%91%E8%AE%A1%E7%AE%97%E5%AE%9E%E9%AA%8C%E6%B5%8B%E8%AF%95%E8%80%83%E7%82%B9%E6%95%B4%E7%90%86/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="常用展示口令展示路由表 Router#show ip route">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2020/06/07/Vkst5pw78KhnSML.png">
+<meta property="article:published_time" content="2020-09-03T06:11:36.713Z">
+<meta property="article:modified_time" content="2020-09-03T05:43:03.107Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="计网">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/06/07/Vkst5pw78KhnSML.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-互联网计算实验测试考点整理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/03/%E4%BA%92%E8%81%94%E7%BD%91%E8%AE%A1%E7%AE%97%E5%AE%9E%E9%AA%8C%E6%B5%8B%E8%AF%95%E8%80%83%E7%82%B9%E6%95%B4%E7%90%86/" class="article-date">
+  <time datetime="2020-09-03T06:11:36.713Z" itemprop="datePublished">2020-09-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      互联网计算常用口令
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="常用展示口令"><a href="#常用展示口令" class="headerlink" title="常用展示口令"></a>常用展示口令</h2><p><strong>展示路由表</strong></p>
+<p>Router#show ip route</p>
+<a id="more"></a>
+
+<p><strong>展示NAT转换</strong></p>
+<p>Router#show ip nat translations</p>
+<p>简化 Router#show ip nat tr</p>
+<p><strong>展示ACL访问控制</strong></p>
+<p>Router#show access-list</p>
+<p><strong>展示VLAN配置</strong></p>
+<p>Router#show vlan</p>
+<p>Router#show vlan brief</p>
+<p><strong>展示路由协议</strong></p>
+<p>Router#show ip protocol</p>
+<p>简化 Router#show ip pr</p>
+<h2 id="配置常用口令"><a href="#配置常用口令" class="headerlink" title="配置常用口令"></a>配置常用口令</h2><ol>
+<li><p><strong>配置动态路由协议OSPF</strong></p>
+<ul>
+<li>Router(config)#router ospf  1{需要为从1开始的具体数字，表示ospf的进程号}</li>
+<li>Router(config)#net 192.168.1.0{需要宣告的网段} 0.0.0.255{校验位} area 0{所处区域编号}</li>
+<li>Router(config)#no net 192.168.1.0{不在宣告的网段} 0.0.0.255{校验位} area 0{所处区域编号}</li>
+</ul>
+</li>
+<li><p><strong>配置VLAN以及trunk技术</strong></p>
+<ul>
+<li><p>Switch(config)#vlan 10{vlan编号}</p>
+</li>
+<li><p>Switch(config-vlan)#name VLAN10{vlan 10的名字，可以任意取}</p>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>Switch(config)#int f0/2{进入对应的Switch端口}</p>
+</li>
+<li><p>Switch(config-if)#switchport mode access/trunk{配置端口模式}  </p>
+<p>简化为 Switch(config-if)#sw mo acc/tr</p>
+</li>
+<li><p>Switch(config-if)#switchport access vlan 10{access端口模式下，将端口配置向对应的vlan}</p>
+<p>简化为 Switch(config-if)#sw acc vlan 10</p>
+<p>删去VLAN</p>
+</li>
+<li><p>Switch(config)#no vlan 10{编号}</p>
+<p>注：直接删除vlan会使得该vlan原先匹配的端口无法连通，一般先将该vlan的端口转移至默认vlan 1，再作删除操作</p>
+</li>
+</ul>
+<ol start="3">
+<li><p><strong>配置单臂路由</strong></p>
+<p>配置子网前建议先将原主网打开(Router(config)#int f0/0   Router(config-if)#no shut)</p>
+<p>单臂路由对应的switchport应该设置为trunk模式</p>
+<ul>
+<li><p>Router(config)#int f0/0.1 {进入f0/0的子网段}</p>
+</li>
+<li><p>Router(config-subif)#en dot1q 10{使用dot1q协议封装协议报文至vlan 10，指令中dot1q后面是多少就封装到哪个网段}</p>
+<p>之后配置ip地址和子网掩码，对应网段的主机的默认网关应为路由器中的对应ip地址</p>
+</li>
+</ul>
+</li>
+<li><p><strong>配置三层交换机</strong></p>
+<p><strong>需要在三层交换机中创建vtp域并设置当前交换机在vtp的工作模式为server，创建vlan、配置vlan地址分配并在设置端口为access模式后设置端口为trunk模式。此外，还需打开交换机路由功能</strong></p>
+<p>Switch(config)#vtp domain test{创建vtp域}</p>
+<p>Switch(config)#vtp mode server(设置当前交换机在vtp的工作模式为server)</p>
+<p>Switch(config)#vlan 10{创建vlan}</p>
+</li>
+</ol>
+<p>   Switch(config)#interface f0/1{进入端口}</p>
+<p>   Switch(config-if)#sw mo acc{修改端口模式为access}</p>
+<p>   <strong>注：因为cisco的三层交换机有一个auto模式，不能直接配置trunk</strong></p>
+<p>   Switch(config-if)#sw mo tr{修改端口模式为trunk} </p>
+<p>   Switch(config)#ip routing{启动路由}</p>
+<p>   Switch(config)#int vlan  10{进入vlan 10}</p>
+<p>   Switch(config-if)#ip add 192.168.1.1 255.255.255.0 {为vlan 10配置地址}</p>
+<p>   <strong>需要在第二层交换机中配置vtp中客户机模式，设置对应trunk端口，并将对应主机划分入vlan中</strong></p>
+<ol start="5">
+<li><p><strong>配置ACL访问列表</strong></p>
+<ul>
+<li><p>Router(config)#access-list 123{访问列表编号} deny/permit icmp{报文类型} host 192.168.6.2{主机的ip地址} 192.168.7.0 0.0.0.255{禁止/允许访问的网段}</p>
+</li>
+<li><p>Router(config)#no access-list 123{删去的访问列表编号}</p>
+<p>注：Router(config)#access-list 123 deny/permit icmp any any</p>
+<p>{访问列表默认匹配为拒绝，需要在结尾增加permit any any允许报文传递}</p>
+</li>
+<li><p>Router(config-if)#ip access-group 123{使用的访问列表的编号} in/out{配置进/出端口}</p>
+<p><strong>标准访问控制列表 ：</strong>Router(config)#access-list 10 deny host 192.168.6.2<br>根据数据包的源IP地址来允许或拒绝数据包。<br>访问控制列表号是1-99以及1300~1999。</p>
+<p><strong>扩展访问控制列表：</strong>Router(config)#access-list 123 deny icmp host 192.168.6.2 192.168.7.0 0.0.0.255<br>根据数据包的源IP地址、目的IP地址、指定协议、端口和标志来允许或拒绝数据包。<br>访问控制列表号是100-199以及2000~2699。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>配置静态NAT</strong></p>
+<ul>
+<li>Router(config)#ip nat inside source static 10.0.1.2 192.168.8.2</li>
+<li>Router(config-if)#ip nat inside/outside</li>
+</ul>
+</li>
+<li><p><strong>配置动态NAT</strong></p>
+<p><img src="https://i.loli.net/2020/06/07/Vkst5pw78KhnSML.png" alt="X79C_PZ1@_TT76_112B3H_C.png"></p>
+</li>
+<li><p><strong>配置PAT</strong></p>
+<ul>
+<li><p>第一步，设置外部端口。</p>
+<p>interface f0/1</p>
+<p>ip address 202.99.160.1 255.255.255.0</p>
+<p>in nat outside</p>
+</li>
+<li><p>第二步，设置内部端口。</p>
+<p>interface f0/0</p>
+<p>ip address 10.100.100.1 255.255.255.0</p>
+<p>ip nat inside</p>
+</li>
+<li><p>第三步，定义合法IP地址池。</p>
+<p>in nat pool onlyone 202.99.160.2 202.99.160.2 netmask 255.255.255.252</p>
+<p>// 指明地址缓冲池的名称为onlyone,IP地址范围为202.99.160.2,子网掩码为255.255.255.252。由于本例只有一个IP地址可用，所以，起始IP地址与终止IP地址均为202.99.160.2。如果有多个IP地址，则应当分别键入起止的IP直址。</p>
+</li>
+<li><p>第四步，定义内部访问列。</p>
+<p>access-list 1 permit 10.100.100.0 0.0.0.255</p>
+<p>允许访问Internetr的网段为10.100.100.0~10.100.100.255，子网掩码为255.255.255.0。需要注意的是，在这里子网掩码的顺序跟平常所写的顺序相反，即0.255.255.255。</p>
+</li>
+<li><p>第五步，设置复用动态地址转换。</p>
+<p>在全局设置模式下，设置在内部的本地地址与内部合法IP地址间建立复用动态地址转换。命令语法如下：ip nat inside source list访问列表号pool内部合法地址池名字overload</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h2><ol>
+<li><p><strong>静态NAT、动态NAT、PAT端口多路复用的区别</strong></p>
+<p>静态转换（static translation）将内部网络的私有IP地址转换为公有合法IP地址。<strong>IP地址的对应关系是一对一的，而且是不变的。</strong>借助于静态转换，可以<strong>实现外部网络对内部网络中某些特定设备(如服务器)的访问。</strong></p>
+<p>动态转换（dynamic translation）指将内部私有IP转换为公网IP地址时，IP的对应关系是不确定的。也就是说只要指定哪些内部地址可以进行NAT转换，以及哪些可以的合法的IP地址可以作为外部地址，就可以进行动态转换了。也可以使用多个合法地址集。<strong>当ISP提供的合法IP地址略少于网络内部的计算机数量时。可以采用动态转换的方式。</strong> </p>
+<p>端口多路复用（port address translation，）PAT <strong>改变外出数据包的源IP地址和源端口并进行端口转换，即端口地址转换采用端口多路复用的方式。内部网络的所有主机均可共享一个合法外部IP地址实现互联网的访问。最大程度上节约IP地址资源。</strong></p>
+<p>端口多路复用使用的是端口号的转换，也是不确定的，所以不能和动态转换同时使用，这个问题可以通过实施静态NAT映射来避免。</p>
+<p>NAT端口映射关系：是将TCP或UDP协议中的内部局部地址需要转换的端口号转换成为内部全局地址的端口号。</p>
+</li>
+<li><p><strong>RIP和OSPF的区别</strong></p>
+<ol>
+<li><p>【名字不同】</p>
+<ul>
+<li>RIP（路由信息协议）——分布式的基于距离向量的路由选择协议</li>
+<li>OSPF（开放最短路径优先协议）—— 使用分布式的基于链路状态的路由选择协议</li>
+</ul>
+</li>
+<li><p>【工作核心不同】</p>
+<ul>
+<li>RIP：数跳数</li>
+<li>OSPF：计算链路的度量值</li>
+</ul>
+</li>
+<li><p>【向谁发】</p>
+<ul>
+<li>RIP：仅和相邻路由器交换信息；</li>
+<li>OSPF：向本自治系统所有路由器发送消息，由于路由器发送的链路状态信息只能单向传送，OSPF不存在“坏消息传播得慢”的问题，更新过程的收敛性得到保证。</li>
+</ul>
+<p>【发什么】</p>
+<ul>
+<li>RIP：路由器交换的信息是当前本路由器所知道的全部信息，即自己现在的路由表</li>
+<li>OSPF：发送的信息是与本路由器相邻的所有路由器的链路状态 ，只涉及与相邻路由器的连通状态，与整个互联网的规模无关。</li>
+</ul>
+<p>【什么时候发】</p>
+<ul>
+<li>RIP：按固定的时间间隔交换路由信息（当网络拓扑发生变化时，路由器也及时向相邻路由器通告拓扑变化后的路由信息）</li>
+<li>OSPF：在网络刚刚启动计算第一次路由表时，一定发路由信息。只有当链路状态发生变化时，路由器才能向所有路由器用洪泛法发送此消息</li>
+</ul>
+</li>
+<li><ul>
+<li>RIP协议使用运输层的用户数据包UDP来进行传送</li>
+<li>OSPF的位置在网络层，直接用IP数据报传送(其IP数据报首部的协议字段值为89)。由于OSPF构成的数据报很短，不仅减少了路由信息的通信量，而且在传送中不必分片，不会出现一片丢失而重传整个数据报的现象。</li>
+</ul>
+</li>
+<li><ul>
+<li>RIP：不能在两个网络之间同时使用多条路由，选择一条具有最少路由器的路由即最短路由</li>
+<li>OSPF：如果到同一个目的网络有多条相同代价的路径时，可以将通信量分配给这几条路径，做到路径间的负载平衡</li>
+</ul>
+</li>
+<li><ul>
+<li>RIP：限制了网络规模，能使用的最大距离为15,16表示不可达</li>
+<li>OSPF：链路的度量可以是1~65 535中的任何一个无量纲的数，可供管理人员来决定。因此十分灵活。</li>
+</ul>
+</li>
+<li><ul>
+<li>RIP：1号版本不支持子网划分，2号版本支持子网划分</li>
+<li>OSPF在路由分组中包含子网掩码，支持可变长度的子网划分和无分类的编址CIDR</li>
+</ul>
+</li>
+<li><p>所有在OSPF路由器之间交换的分组（如链路状态更新分组）都具有鉴别功能，因而保证了仅在可信赖的路由器之间交换链路状态信息。</p>
+</li>
+<li><p>由于各路由器之间频繁地交换链路状态信息，因此所有的路由器最终都能建立一个链路状态数据库，及即全网拓扑结构图。</p>
+<ul>
+<li>OSPF的链路数据库能较快地进行更新，使每个路由器能及时更新其路由表，OSPF的更新过程收敛得快是其重要优点。</li>
+<li>RIP协议的每个路由器虽然知道到所有的网络距离以及下一跳路由器，但是不知道全网的拓扑结构，只有到了下一跳路由器，才能知道再下一跳应当怎样走</li>
+</ul>
+</li>
+<li><p>为了使 OSPF 能够用于规模很大的网络，OSPF 将一个自治系统再划分为若干个更小的范围，叫作区域。利用洪泛法交换链路状态信息的范围局限于每一个区域而不是整个的自治系统，减少了整个网络上的通信量，减轻路由器的负担。</p>
+</li>
+</ol>
+</li>
+</ol>
+<ol start="3">
+<li><p><strong>关于access-list</strong></p>
+<ul>
+<li><p>技术原理：</p>
+<p>ACLs的全称为接入控制列表（Access Control Lists），也称为访问列表（Access List），俗称为防火墙，在有的文档中还称之为包过滤。ACLs通过定义一些规则对网络设备接口上的数据报文进行控制：允许通过或丢弃，从而提高网络可管理性和安全性；</p>
+<p>IP ACL分为两种：标准IP访问列表和扩展IP访问列表，编号范围分别为1<del>99、1300</del>1999，100<del>199、2000</del>2699；</p>
+<p>标准IP访问列表可以根据数据包的源IP地址定义规则，进行数据包的过滤；</p>
+<p>扩展IP访问列表可以根据数据包的源IP、目的IP、源端口、目的端口、协议来定义规则，进行数据包的过滤；</p>
+<p>IP ACL基于接口进行规则的应用，分为：入栈应用和出栈应用；</p>
+</li>
+<li><p>一些特点：</p>
+<ol>
+<li>定义permit（允许）deny（拒绝）</li>
+<li>序列号由小到大</li>
+<li>满足金字塔</li>
+<li>一旦匹配，立即执行</li>
+<li>调用是在接口上，in（先看ACL，后看路由），out（先看路由表，再看ACL）</li>
+<li>标准ACL尽量靠近目标，是因为标准的ACL只匹配源IP地址，扩展ACL尽量控制源，但不能在源上（ACL不能过滤自身所产生的流量），因为扩展ACL不仅可以匹配源目IP地址，还可以匹配协议和端口号</li>
+<li>末尾隐含拒绝所有</li>
+</ol>
+</li>
+<li><p>分类：</p>
+<ul>
+<li>标准ACL：仅仅匹配源IP<ul>
+<li>编号：1-99、1300-1999</li>
+<li>命名方式：standard</li>
+</ul>
+</li>
+<li>扩展ACL：匹配源IP，目标IP地址，协议，端口<ul>
+<li>编号：100-1299、2000-2699</li>
+<li>命名方式：extended</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>单臂路由和三层交换机</strong></p>
+<p>三层交换机就是<strong>具有部分路由器功能的交换机</strong>，三层交换机的最重要目的是加快大型局域网内部的数据交换，所具有的路由功能也是为这目的服务的，能够做到一次路由，多次转发。对于数据包转发等规律性的过程由硬件高速实现，而像路由信息更新、路由表维护、路由计算、路由确定等功能，由软件实现。<strong>三层交换技术就是二层交换技术+三层转发技术。</strong></p>
+<p>三层交换机 需要调用指令 Switch(config)#ip routing 开启路由功能</p>
+<p>由于单臂路由依旧是个路由器，在数据转发方面始终不如三层交换机，三层交换机可以高速转发数据以及不一样数据之间的交换，因此，当电脑数量不多的时候，运用单臂路由就足够了，但是，如果局域网电脑速度比较多，最好选择三层交换机，这样就不会影响局域网电脑网络传输速率</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/09/03/%E4%BA%92%E8%81%94%E7%BD%91%E8%AE%A1%E7%AE%97%E5%AE%9E%E9%AA%8C%E6%B5%8B%E8%AF%95%E8%80%83%E7%82%B9%E6%95%B4%E7%90%86/" data-id="ckemevyxg000n74u8d1zq8jgv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%BD%91/" rel="tag">计网</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/09/03/%E5%9F%BA%E4%BA%8E%E9%AB%98%E7%BB%B4%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E7%9A%84%E7%AE%97%E6%B3%95%E5%88%9D%E6%AD%A5%E6%80%9D%E8%80%83/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          高维初步思考
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/09/03/vue%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">VUE前后端</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/" rel="tag">VUE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/" rel="tag">数据科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/" rel="tag">数据科学基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%BD%91/" rel="tag">计网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E5%B7%A5%E4%BA%8C/" rel="tag">软工二</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/" style="font-size: 10px;">数据科学</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">数据科学基础</a> <a href="/tags/%E8%AE%A1%E7%BD%91/" style="font-size: 20px;">计网</a> <a href="/tags/%E8%BD%AF%E5%B7%A5%E4%BA%8C/" style="font-size: 20px;">软工二</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/03/%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3/">软工二需求文档</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/03/%E8%BD%AF%E5%B7%A5%E4%BA%8C%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/">软工二知识点整理</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/03/%E8%AF%A6%E7%BB%86%E7%94%A8%E4%BE%8B%E6%8F%8F%E8%BF%B0/">软工二用例文档</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/03/%E8%AE%A1%E7%BD%91%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%BF%AD%E4%BB%A3%E4%BA%8C%E5%BC%80%E5%8F%91/">计网小程序迭代</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/03/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80%E5%A4%A7%E4%BD%9C%E4%B8%9A%E9%A1%B9%E7%9B%AE%E8%AE%BE%E8%AE%A1/">数据科学基础大作业</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

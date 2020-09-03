@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>NAT实验相关 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="NAT相关方面的配置简单讲解介绍 静态NAT、动态NAT、端口多路复用PAT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NAT实验相关">
+<meta property="og:url" content="http://example.com/2020/09/03/NAT%E5%AE%9E%E9%AA%8C%E7%9B%B8%E5%85%B3%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="NAT相关方面的配置简单讲解介绍 静态NAT、动态NAT、端口多路复用PAT">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-03T06:11:36.698Z">
+<meta property="article:modified_time" content="2020-09-03T05:38:38.102Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="计网">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-NAT实验相关简单配置介绍" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/03/NAT%E5%AE%9E%E9%AA%8C%E7%9B%B8%E5%85%B3%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/" class="article-date">
+  <time datetime="2020-09-03T06:11:36.698Z" itemprop="datePublished">2020-09-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      NAT实验相关
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="NAT相关方面的配置"><a href="#NAT相关方面的配置" class="headerlink" title="NAT相关方面的配置"></a>NAT相关方面的配置</h1><p>简单讲解介绍 静态NAT、动态NAT、端口多路复用PAT</p>
+<a id="more"></a>
+
+<p>模拟情况为Router0，Router1，Router2依次串线连接</p>
+<p>预先配置处理</p>
+<p>Router&gt;en </p>
+<p>进入特权模式</p>
+<p>Router#config t</p>
+<p>进入全局配置模式</p>
+<p>R0</p>
+<p>Router(config)#int s2/0</p>
+<p>Router(config-if)#ip address 192.168.1.1 255.255.255.0</p>
+<p>Router(config-if)#no shut</p>
+<p>Router(config-if)#clock rate 56000</p>
+<p>R1</p>
+<p>Router(config)#int s2/0</p>
+<p>Router(config-if)#ip address 192.168.1.2 255.255.255.0</p>
+<p>Router(config-if)#no shut</p>
+<p>Router(config-if)#clock rate 56000</p>
+<p>Router(config)#int s3/0</p>
+<p>Router(config-if)#ip address 200.1.1.1 255.255.255.0</p>
+<p>Router(config-if)#no shut</p>
+<p>Router(config-if)#clock rate 56000</p>
+<p>R2</p>
+<p>Router(config)#int s2/0</p>
+<p>Router(config-if)#ip address 200.1.1.2 255.255.255.0</p>
+<p>Router(config-if)#no shut</p>
+<p>Router(config-if)#clock rate 56000</p>
+<h2 id="静态NAT"><a href="#静态NAT" class="headerlink" title="静态NAT"></a>静态NAT</h2><p>简介：将未注册的 IPv4 地址映射到注册的 IPv4 地址（一对一）。在必须从网络外部访问设备时静态 NAT 特别有用。</p>
+<p>在R1中配置</p>
+<p><strong>添加静态NAT</strong></p>
+<p>Router(config)#ip nat inside source static 192.168.1.1 200.1.1.254</p>
+<p>Router(config)#interface s2/0</p>
+<p>Router(config-if)#ip nat inside</p>
+<p>Router(config)#interface s3/0</p>
+<p>Router(config-if)#ip nat outside</p>
+<p>Router(config-if)#end</p>
+<p><strong>添加静态路由</strong></p>
+<p>Router(config)#ip route 200.1.1.0 255.255.255.0 s2/0</p>
+<p>可以通过在R1上用本地地址192.168.1.1 ping 200.1.1.2查看实现</p>
+<p><strong>删除静态NAT</strong></p>
+<p>Router(config)#no ip nat inside source static 192.168.1.1 200.1.1.254</p>
+<h2 id="动态NAT"><a href="#动态NAT" class="headerlink" title="动态NAT"></a>动态NAT</h2><p>在R1中配置</p>
+<p><strong>配置动态NAT</strong></p>
+<p>Router(config)#access-list 1 permit 192.168.1.0 0.0.0.255</p>
+<p>Router(config)#ip nat pool nju 200.1.1.253 200.1.1.254 net 255.255.254.0</p>
+<p>(这一部分的子网掩码部分配置个人存疑)</p>
+<p>Router(config)#ip nat inside source list 1 pool nju</p>
+<p>如果无法ping通两端地址，释放对应路由中的NAT条目，释放公有地址池中的共有地址</p>
+<p>方法：Router#clear ip nat translation*</p>
+<p><strong>删除动态PAT</strong></p>
+<p>先删除转换语句，再删除之前建立的 pool，注意删除的顺序</p>
+<p>Router(config)#no ip nat  inside source list 1 pool nju</p>
+<p>Router(config)#no ip nat pool nju 200.1.1.253 200.1.1.254 prefix-length 24 </p>
+<p>Router(config)#ip nat pool nju 200.1.1.253 200.1.1.253 prefix-length 24 </p>
+<p>Router(config)#ip nat inside source list 1 pool nju overload </p>
+<h2 id="配置PAT"><a href="#配置PAT" class="headerlink" title="配置PAT"></a>配置PAT</h2><p>Router(config)#ip nat inside source list 1 pool ds </p>
+<p>（其中ip nat inside source list X pool xx overload为关键字）</p>
+<p>Router(config)#access-list 1 permit 10.1.1.1 255.255.255.0</p>
+<p>Router(config)#ip nat pool ds 20.1.2.5 20.1.2.7 net 255.255.255.0</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/09/03/NAT%E5%AE%9E%E9%AA%8C%E7%9B%B8%E5%85%B3%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/" data-id="ckemevywv000h74u867650w6s" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%BD%91/" rel="tag">计网</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/09/03/vue%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          VUE前后端
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/09/03/Linux%E6%9C%9F%E6%9C%AB%E9%87%8D%E7%82%B9%E5%9B%9E%E9%A1%BE/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Linux期末</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/" rel="tag">VUE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/" rel="tag">数据科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/" rel="tag">数据科学基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%BD%91/" rel="tag">计网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E5%B7%A5%E4%BA%8C/" rel="tag">软工二</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/" style="font-size: 10px;">数据科学</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">数据科学基础</a> <a href="/tags/%E8%AE%A1%E7%BD%91/" style="font-size: 20px;">计网</a> <a href="/tags/%E8%BD%AF%E5%B7%A5%E4%BA%8C/" style="font-size: 20px;">软工二</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/03/%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3/">软工二需求文档</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/03/%E8%BD%AF%E5%B7%A5%E4%BA%8C%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/">软工二知识点整理</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/03/%E8%AF%A6%E7%BB%86%E7%94%A8%E4%BE%8B%E6%8F%8F%E8%BF%B0/">软工二用例文档</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/03/%E8%AE%A1%E7%BD%91%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%BF%AD%E4%BB%A3%E4%BA%8C%E5%BC%80%E5%8F%91/">计网小程序迭代</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/03/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80%E5%A4%A7%E4%BD%9C%E4%B8%9A%E9%A1%B9%E7%9B%AE%E8%AE%BE%E8%AE%A1/">数据科学基础大作业</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>软工二用例文档 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="详细用例描述浏览订单">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软工二用例文档">
+<meta property="og:url" content="http://example.com/2020/09/03/%E8%AF%A6%E7%BB%86%E7%94%A8%E4%BE%8B%E6%8F%8F%E8%BF%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="详细用例描述浏览订单">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2020/05/16/waTG3LXSxIAh4ei.png">
+<meta property="og:image" content="https://i.loli.net/2020/05/16/Jn87mpXqxGUikru.png">
+<meta property="og:image" content="https://i.loli.net/2020/05/16/or5KqW6ZQBaN74A.png">
+<meta property="og:image" content="https://i.loli.net/2020/05/16/rTaPsmW7f2Zzh4n.png">
+<meta property="og:image" content="https://i.loli.net/2020/05/16/jnyXoEV9U1AgmpS.png">
+<meta property="og:image" content="https://i.loli.net/2020/05/16/oFuBZ71QaEwTtbJ.png">
+<meta property="article:published_time" content="2020-09-03T06:11:36.738Z">
+<meta property="article:modified_time" content="2020-09-03T06:16:27.987Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="软工二">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/16/waTG3LXSxIAh4ei.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-详细用例描述" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/03/%E8%AF%A6%E7%BB%86%E7%94%A8%E4%BE%8B%E6%8F%8F%E8%BF%B0/" class="article-date">
+  <time datetime="2020-09-03T06:11:36.738Z" itemprop="datePublished">2020-09-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      软工二用例文档
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="详细用例描述"><a href="#详细用例描述" class="headerlink" title="详细用例描述"></a>详细用例描述</h2><h3 id="浏览订单"><a href="#浏览订单" class="headerlink" title="浏览订单"></a>浏览订单</h3><a id="more"></a>
+
+<ul>
+<li><p>用例编号：</p>
+</li>
+<li><p>名称：异常订单执行情况浏览</p>
+</li>
+<li><p>创建日期：2020.5.16</p>
+</li>
+<li><p>最后一次更新者：刁苏阳</p>
+</li>
+<li><p>参与者：酒店管理人员</p>
+</li>
+<li><p>触发条件：客户预订未及时入住，并未向酒店工作人员进行登记</p>
+</li>
+<li><p>前置条件：存在异常订单</p>
+</li>
+<li><p>后置条件：客户信用值被扣除</p>
+</li>
+<li><p>优先级：中</p>
+</li>
+<li><p>正常流程：</p>
+<ol>
+<li>酒店管理人员浏览查询订单执行情况</li>
+<li>酒店管理人员删去异常订单并扣除对应客户等于订单总价的信用值</li>
+</ol>
+</li>
+<li><p>扩展情况：</p>
+<p>2a. 酒店管理人员查看异常订单，若已经手工为客户补登记执行情况，则恢复扣除的信用值</p>
+</li>
+<li><p>特殊需求：待定</p>
+</li>
+</ul>
+<h3 id="信用充值"><a href="#信用充值" class="headerlink" title="信用充值"></a>信用充值</h3><ul>
+<li><p>用例编号：</p>
+</li>
+<li><p>名称：信用充值</p>
+</li>
+<li><p>创建日期：2020.5.16</p>
+</li>
+<li><p>最后一次更新者：刁苏阳</p>
+</li>
+<li><p>参与者：客户、网站管理人员</p>
+</li>
+<li><p>触发条件：客户选择信用充值操作</p>
+</li>
+<li><p>前置条件：无</p>
+</li>
+<li><p>后置条件：客户信用值增加对应充值金额数量</p>
+</li>
+<li><p>优先级：中</p>
+</li>
+<li><p>正常流程：</p>
+<ol>
+<li>客户选择进行信用充值</li>
+<li>客户输入充值金额数并支付对应金额</li>
+<li>客户信用值提高对应充值金额数</li>
+<li>网站管理人员更新对应数据库</li>
+</ol>
+</li>
+<li><p>扩展流程：</p>
+<p>2a. 客户中途取消充值则返回个人信息界面</p>
+</li>
+<li><p>特殊需求：交易环境安全性高</p>
+</li>
+</ul>
+<h2 id="需求分析模型"><a href="#需求分析模型" class="headerlink" title="需求分析模型"></a>需求分析模型</h2><h3 id="系统顺序图"><a href="#系统顺序图" class="headerlink" title="系统顺序图"></a>系统顺序图</h3><h4 id="用例-浏览订单"><a href="#用例-浏览订单" class="headerlink" title="用例 浏览订单"></a>用例 浏览订单</h4><p><img src="https://i.loli.net/2020/05/16/waTG3LXSxIAh4ei.png" alt="系统顺序图.jpg"></p>
+<h4 id="用例-信用充值"><a href="#用例-信用充值" class="headerlink" title="用例 信用充值"></a>用例 信用充值</h4><p><img src="https://i.loli.net/2020/05/16/Jn87mpXqxGUikru.png" alt="系统顺序图 _1_.jpg"> </p>
+<h3 id="概念类图"><a href="#概念类图" class="headerlink" title="概念类图"></a>概念类图</h3><h4 id="用例-浏览订单-1"><a href="#用例-浏览订单-1" class="headerlink" title="用例 浏览订单"></a>用例 浏览订单</h4><p><img src="https://i.loli.net/2020/05/16/or5KqW6ZQBaN74A.png" alt="概念类图.jpg"> </p>
+<h4 id="用例-信用充值-1"><a href="#用例-信用充值-1" class="headerlink" title="用例 信用充值"></a>用例 信用充值</h4><p><img src="https://i.loli.net/2020/05/16/rTaPsmW7f2Zzh4n.png" alt="概念类图 _3_.jpg"> </p>
+<h3 id="状态图"><a href="#状态图" class="headerlink" title="状态图"></a>状态图</h3><h4 id="用例-浏览订单-2"><a href="#用例-浏览订单-2" class="headerlink" title="用例 浏览订单"></a>用例 浏览订单</h4><p><img src="https://i.loli.net/2020/05/16/jnyXoEV9U1AgmpS.png" alt="状态图.jpg"> </p>
+<h4 id="用例-信用充值-2"><a href="#用例-信用充值-2" class="headerlink" title="用例 信用充值"></a>用例 信用充值</h4><p><img src="https://i.loli.net/2020/05/16/oFuBZ71QaEwTtbJ.png" alt="状态图 _1_.jpg"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/09/03/%E8%AF%A6%E7%BB%86%E7%94%A8%E4%BE%8B%E6%8F%8F%E8%BF%B0/" data-id="ckemevyxy000w74u80jnbetgb" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%BD%AF%E5%B7%A5%E4%BA%8C/" rel="tag">软工二</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/09/03/%E8%BD%AF%E5%B7%A5%E4%BA%8C%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          软工二知识点整理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/09/03/%E8%AE%A1%E7%BD%91%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%BF%AD%E4%BB%A3%E4%BA%8C%E5%BC%80%E5%8F%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">计网小程序迭代</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/" rel="tag">VUE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/" rel="tag">数据科学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/" rel="tag">数据科学基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%BD%91/" rel="tag">计网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E5%B7%A5%E4%BA%8C/" rel="tag">软工二</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/" style="font-size: 10px;">数据科学</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">数据科学基础</a> <a href="/tags/%E8%AE%A1%E7%BD%91/" style="font-size: 20px;">计网</a> <a href="/tags/%E8%BD%AF%E5%B7%A5%E4%BA%8C/" style="font-size: 20px;">软工二</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/03/%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3/">软工二需求文档</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/03/%E8%BD%AF%E5%B7%A5%E4%BA%8C%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/">软工二知识点整理</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/03/%E8%AF%A6%E7%BB%86%E7%94%A8%E4%BE%8B%E6%8F%8F%E8%BF%B0/">软工二用例文档</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/03/%E8%AE%A1%E7%BD%91%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%BF%AD%E4%BB%A3%E4%BA%8C%E5%BC%80%E5%8F%91/">计网小程序迭代</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/03/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80%E5%A4%A7%E4%BD%9C%E4%B8%9A%E9%A1%B9%E7%9B%AE%E8%AE%BE%E8%AE%A1/">数据科学基础大作业</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
