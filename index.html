@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Welcome to My Hexo Blog</title>
+  <title>CHAOS&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
-<meta property="og:title" content="Welcome to My Hexo Blog">
+<meta property="og:title" content="CHAOS&#39;s blog">
 <meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Welcome to My Hexo Blog">
+<meta property="og:site_name" content="CHAOS&#39;s blog">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="CHAOS">
+<meta property="article:tag" content="bug程序员">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternative" href="/atom.xml" title="Welcome to My Hexo Blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="CHAOS&#39;s blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -59,6 +60,10 @@
 	        
 			</ul>
 		</nav>
+		<nav>
+			<a>总文章数 19</a>
+			<a>|总字数 <span class="post-count">53.9k</span></a>
+		</nav>
 		<nav class="header-smart-menu">
     		
     			
@@ -78,6 +83,8 @@
 			<div class="social">
 				
 					<a class="github" target="_blank" href="https://github.com/Diaosuyang" title="github"><i class="icon-github"></i></a>
+		        
+					<a class="mail" target="_blank" href="mailto:164851545@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -114,6 +121,8 @@
 					
 						<a class="github" target="_blank" href="https://github.com/Diaosuyang" title="github"><i class="icon-github"></i></a>
 			        
+						<a class="mail" target="_blank" href="mailto:164851545@qq.com" title="mail"><i class="icon-mail"></i></a>
+			        
 				</div>
 			</nav>
 
@@ -140,68 +149,157 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-需求文档" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-操作系统.课堂笔记md" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/03/%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3/">软工二需求文档</a>
+      <a class="article-title" href="/2020/09/07/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0md/">计算机操作系统课程笔记</a>
     </h1>
   
 
         
-        <a href="/2020/09/03/%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3/" class="archive-article-date">
-  	<time datetime="2020-09-03T06:11:36.751Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-03</time>
+        <a href="/2020/09/07/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0md/" class="archive-article-date">
+  	<time datetime="2020-09-07T06:01:27.736Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="需求文档"><a href="#需求文档" class="headerlink" title="需求文档"></a>需求文档</h2><h3 id="用例-浏览订单"><a href="#用例-浏览订单" class="headerlink" title="用例 浏览订单"></a>用例 浏览订单</h3><h4 id="特征描述"><a href="#特征描述" class="headerlink" title="特征描述"></a>特征描述</h4><p>​    当客户未按预订的时间入住酒店时，系统将此订单判定为异常订单。酒店管理人员浏览订单信息对异常订单进行处理。若客户没有进行补登记，则酒店工作人员扣除客户相应的信用值。</p>
-<p>​    优先级 = 高</p>
-<h4 id="刺激-响应序列"><a href="#刺激-响应序列" class="headerlink" title="刺激/响应序列"></a>刺激/响应序列</h4><p>​    刺激：客户未按预定时间入住</p>
-<p>​    响应：系统将此订单状态设为异常订单</p>
-<p>​    刺激：酒店管理人员浏览订单</p>
-<p>​    响应：系统展示订单列表</p>
-<p>​    刺激：酒店管理人员对异常订单进行处理</p>
-<p>​    响应：扣除对应客户订单金额对应的信用值</p>
-<h4 id="相关功能需求"><a href="#相关功能需求" class="headerlink" title="相关功能需求"></a>相关功能需求</h4><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>ManagerOrder.order.show<br>ManagerOrder.order.excute</td>
-<td>展示订单界面<br>处理订单信息</td>
-</tr>
-<tr>
-<td>Manager.UserCredit.deduct</td>
-<td>y</td>
-</tr>
-</tbody></table>
-<h3 id="用例-信用充值"><a href="#用例-信用充值" class="headerlink" title="用例 信用充值"></a>用例 信用充值</h3><h4 id="特征描述-1"><a href="#特征描述-1" class="headerlink" title="特征描述"></a>特征描述</h4><p>​    当客户信息低于一定程度时无法参与酒店预订活动，需要充值信用使信用达到正常标准才能参与酒店预订。此外，信用充值也可以使客户信用对应的VIP等级提升，响应到一定程度的VIP优惠</p>
-<p>​    优先级 = 中</p>
-<h4 id="刺激-响应序列-1"><a href="#刺激-响应序列-1" class="headerlink" title="刺激/响应序列"></a>刺激/响应序列</h4><p>​    刺激：客户进入信用充值界面</p>
-<p>​    响应：系统显示信用充值界面</p>
-<p>​    刺激：客户选择充值金额并支付对应金额</p>
-<p>​    响应：系统为客户增加对应充值金额数的信用值并返回上一界面</p>
-<h4 id="相关功能需求-1"><a href="#相关功能需求-1" class="headerlink" title="相关功能需求"></a>相关功能需求</h4><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>User.Credit.charge</td>
-<td>用户信用充值</td>
-</tr>
-</tbody></table>
+        <p>操作系统课堂笔记</p>
+        
+          <a class="article-more-a" href="/2020/09/07/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0md/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">操作系统</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/09/07/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0md/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-需求设计纲要" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/07/%E9%9C%80%E6%B1%82%E8%AE%BE%E8%AE%A1%E7%BA%B2%E8%A6%81/">需求设计纲要</a>
+    </h1>
+  
+
+        
+        <a href="/2020/09/07/%E9%9C%80%E6%B1%82%E8%AE%BE%E8%AE%A1%E7%BA%B2%E8%A6%81/" class="archive-article-date">
+  	<time datetime="2020-09-07T02:12:26.746Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>需求设计课程笔记</p>
+<h1 id="0-需求设计纲要"><a href="#0-需求设计纲要" class="headerlink" title="0.需求设计纲要"></a>0.需求设计纲要</h1><blockquote>
+<p>2020/09/07  1</p>
+</blockquote>
+<h3 id="组成成分的角度"><a href="#组成成分的角度" class="headerlink" title="组成成分的角度"></a>组成成分的角度</h3><p>软件：代码 + 文档</p>
+<p>代码：数据结构 + 算法</p>
+<p>数据结构：数据元素之间的逻辑结构和物理结构</p>
+<p>算法：有穷明确可执行的指令集 + 计算平台</p>
+<p>计算平台：编译器/硬件 + 操作系统</p>
+<h3 id="从问题求解的角度"><a href="#从问题求解的角度" class="headerlink" title="从问题求解的角度"></a>从问题求解的角度</h3><p>作为一种复杂的信息制品，软件是对客观事物的深度抽象和建模，且同时包含了对复杂客观世界的<strong>问题空间</strong>与<strong>解空间</strong>的具体描述</p>
+<p>问题的产生地：当现实的状况与人们期望的状况产生差距时，就产生了问题</p>
+<p>要解决问题，就需要改变现实当中某些实体的状态或改变实体状态变化的演进顺序，使其打到期望的状态或演进顺序</p>
+<p>这些尸体和状态构成了问题解决的基本范围，称为该问题的问题域</p>
+<p>软件系统通过影响问题域，能够帮助人们解决问题，称为解系统</p>
+<p>软件系中的某些部分对问题域中的某些部分具有模拟特性</p>
+<p>通过映射建立的共同知识，就是问题域和解系统之间的共享现象</p>
+<h2 id="需求维度"><a href="#需求维度" class="headerlink" title="需求维度"></a>需求维度</h2><p>需求（要求，问题域端）</p>
+<ul>
+<li>直接需求，间接需求</li>
+<li>不切实际的期望</li>
+</ul>
+<p>需求规格说明（解系统端）</p>
+<ul>
+<li>数据</li>
+<li>功能<ul>
+<li>过程式分析</li>
+<li>面向对象式分析</li>
+</ul>
+</li>
+</ul>
+<p>需求的四个基本概念：问题域、需求、解系统、需求规格说明</p>
+<p>需求的定义</p>
+<blockquote>
+<p>2020/09/07  2</p>
+</blockquote>
+<h2 id="需求工程的概念"><a href="#需求工程的概念" class="headerlink" title="需求工程的概念"></a>需求工程的概念</h2><p>软件工程的一个分支</p>
+<p>需求错误的高代价性</p>
+<p>需求工程的基本活动与实质：问题域、目标、任务、交互</p>
+<p>需求工程活动的困难性</p>
+<ul>
+<li>问题域、目标、任务、交互的相互转化是创造性活动</li>
+<li>编程与设计方面的能力不能直接用于需求分析</li>
+<li>文档撰写、功能验证、基线管理需要丰富的开发与管理经验</li>
+</ul>
+<h2 id="商业模式"><a href="#商业模式" class="headerlink" title="商业模式"></a>商业模式</h2><p>从业务转向“人”：商业模式的重构</p>
+<p>商业模式原理</p>
+<p>商业模式定义：一个商业模式描述的是一个组织创造、传递以及获得价值的基本原理，其本质在于价值的流动</p>
+<p>价值创造与流动过程</p>
+<p><em>需求设计也需要掌握商业模式设计</em></p>
+<p>围绕商业模式的基本活动</p>
+<p>画布：基本模型与工具</p>
+<p>类型：利用画布分析常见的商业模式</p>
+<p>设计：商业模式的构建手段</p>
+<p>战略：</p>
+<p>流程：</p>
 
       
 
@@ -215,7 +313,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">软工二</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">需求设计</a>
         		</li>
       		
 		</ul>
@@ -225,7 +323,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/03/%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/09/07/%E9%9C%80%E6%B1%82%E8%AE%BE%E8%AE%A1%E7%BA%B2%E8%A6%81/">展开全文 >></a>
         </p>
       
 
@@ -302,82 +400,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/09/03/%E8%BD%AF%E5%B7%A5%E4%BA%8C%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-详细用例描述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/03/%E8%AF%A6%E7%BB%86%E7%94%A8%E4%BE%8B%E6%8F%8F%E8%BF%B0/">软工二用例文档</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/03/%E8%AF%A6%E7%BB%86%E7%94%A8%E4%BE%8B%E6%8F%8F%E8%BF%B0/" class="archive-article-date">
-  	<time datetime="2020-09-03T06:11:36.738Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="详细用例描述"><a href="#详细用例描述" class="headerlink" title="详细用例描述"></a>详细用例描述</h2><h3 id="浏览订单"><a href="#浏览订单" class="headerlink" title="浏览订单"></a>浏览订单</h3>
-        
-          <a class="article-more-a" href="/2020/09/03/%E8%AF%A6%E7%BB%86%E7%94%A8%E4%BE%8B%E6%8F%8F%E8%BF%B0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">软工二</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/03/%E8%AF%A6%E7%BB%86%E7%94%A8%E4%BE%8B%E6%8F%8F%E8%BF%B0/">展开全文 >></a>
         </p>
       
 
@@ -543,7 +565,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">数据科学基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据科学</a>
         		</li>
       		
 		</ul>
@@ -1139,10 +1161,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">计网</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
@@ -1155,7 +1173,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">计网</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">VUE</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">软工二</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1163,11 +1189,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">数据科学基础</a>
+                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">软工二</a>
+                <a href="javascript:void(0)" class="js-tag color5">需求设计</a>
               </li>
             
             <div class="clearfix"></div>
