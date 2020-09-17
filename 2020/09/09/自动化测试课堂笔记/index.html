@@ -16,7 +16,7 @@
 <meta property="og:description" content="自动化测试课堂笔记 任课老师：南京大学 陈振宇（第一周）&#x2F; 房春荣 （其他）">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-09-09T05:47:49.048Z">
-<meta property="article:modified_time" content="2020-09-12T15:36:03.150Z">
+<meta property="article:modified_time" content="2020-09-16T08:03:16.117Z">
 <meta property="article:author" content="CHAOS">
 <meta property="article:tag" content="自动化测试">
 <meta name="twitter:card" content="summary">
@@ -66,7 +66,7 @@
 		</nav>
 		<nav>
 			<a>总文章数 25</a>
-			<a>|总字数 <span class="post-count">62.2k</span></a>
+			<a>|总字数 <span class="post-count">63k</span></a>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -229,6 +229,39 @@
 <li>测试方法无效</li>
 <li>Debug方法</li>
 </ul>
+<blockquote>
+<p>2020/09/16</p>
+</blockquote>
+<h1 id="1-图测试理论"><a href="#1-图测试理论" class="headerlink" title="1.图测试理论"></a>1.图测试理论</h1><h2 id="常用测试方法"><a href="#常用测试方法" class="headerlink" title="常用测试方法"></a>常用测试方法</h2><ul>
+<li>等价类：正向测试思维，假设是好的</li>
+<li>故障假设</li>
+</ul>
+<p>基本思路：简单统一</p>
+<p>图测试 最佳的一种表示方法：基本两大类（结构、元素：点和边）</p>
+<h2 id="图基础"><a href="#图基础" class="headerlink" title="图基础"></a>图基础</h2><p>**图G = &lt; V , E &gt; **</p>
+<p>边E $\subseteq $ V $\times$ V , 点V 是有穷的</p>
+<p><strong>路径P(V)</strong></p>
+<p>长度|P| = 边的数量O</p>
+<p>**测试路径TP：起点为V<del>I</del> ，结束于 V<del>O</del>的路径 **</p>
+<p>测试路径满足准则</p>
+<p>语义可行：动态判断，路径是否在运行下能被执行</p>
+<p>语法可行：静态判断，不考虑变量依赖，代码结构上能够访问这条路径</p>
+<p>语法可行不代表语义可行，语义可行一定语法可行</p>
+<p>动静态结合</p>
+<h3 id="n-路径准则"><a href="#n-路径准则" class="headerlink" title="n-路径准则"></a>n-路径准则</h3><p>0-路径：执行所有长度为0的路径，即点覆盖</p>
+<p>1-路径：执行所有长度为1的路径，即边覆盖</p>
+<p>覆盖所有的点<strong>不能</strong>覆盖所有的边，覆盖所有的边<strong>能</strong>覆盖所有的点(不考虑平凡反例)</p>
+<p>2-路径：执行所有长度为2的路径，即对边覆盖</p>
+<p>…</p>
+<p>n-路径</p>
+<p><strong>定理：$\forall$ n $\leq$ 0, n-路径 $\geq$ n+1-路径</strong></p>
+<h3 id="主路径准则"><a href="#主路径准则" class="headerlink" title="主路径准则"></a>主路径准则</h3><p>简单路径：没有重复中间点（任何一个单点、任意一条边都是简单路径）</p>
+<p>极长简单路径：P是简单路径 P $\sub \forall$P’,P’不是简单路径，P是主路径</p>
+<p>主路径覆盖</p>
+<h3 id="基本路径准则"><a href="#基本路径准则" class="headerlink" title="基本路径准则"></a>基本路径准则</h3><p>基本路径(BP)集是所有路径空间的基(线性无关)</p>
+<p>生成基本路径</p>
+<p><strong>圈复杂性度量</strong>：一个图把平面分成的不相通的部分称为圈复杂性 |E|-|V|+2</p>
+<p>定理：|{基本路径集}|=|E|-|V|+2</p>
 
       
 
@@ -371,7 +404,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%AF%BC%E8%AE%BA"><span class="toc-number">1.</span> <span class="toc-text">0.自动化测试导论</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%AF%BC%E8%AE%BA"><span class="toc-number">1.</span> <span class="toc-text">0.自动化测试导论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%9B%BE%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA"><span class="toc-number">2.</span> <span class="toc-text">1.图测试理论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95"><span class="toc-number">2.1.</span> <span class="toc-text">常用测试方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%9F%BA%E7%A1%80"><span class="toc-number">2.2.</span> <span class="toc-text">图基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#n-%E8%B7%AF%E5%BE%84%E5%87%86%E5%88%99"><span class="toc-number">2.2.1.</span> <span class="toc-text">n-路径准则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%B7%AF%E5%BE%84%E5%87%86%E5%88%99"><span class="toc-number">2.2.2.</span> <span class="toc-text">主路径准则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%B7%AF%E5%BE%84%E5%87%86%E5%88%99"><span class="toc-number">2.2.3.</span> <span class="toc-text">基本路径准则</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
