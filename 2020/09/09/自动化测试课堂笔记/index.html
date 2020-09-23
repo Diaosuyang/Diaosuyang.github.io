@@ -16,7 +16,7 @@
 <meta property="og:description" content="自动化测试课堂笔记 任课老师：南京大学 陈振宇（第一周）&#x2F; 房春荣 （其他）">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-09-09T05:47:49.048Z">
-<meta property="article:modified_time" content="2020-09-16T08:03:16.117Z">
+<meta property="article:modified_time" content="2020-09-23T08:26:13.509Z">
 <meta property="article:author" content="CHAOS">
 <meta property="article:tag" content="自动化测试">
 <meta name="twitter:card" content="summary">
@@ -65,8 +65,8 @@
 			</ul>
 		</nav>
 		<nav>
-			<a>总文章数 25</a>
-			<a>|总字数 <span class="post-count">63k</span></a>
+			<a>总文章数 26</a>
+			<a>|总字数 <span class="post-count">66.5k</span></a>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -176,7 +176,7 @@
 <a id="more"></a>
 
 <blockquote>
-<p>2020/09/09</p>
+<p>2020/09/09 陈振宇部分开始</p>
 </blockquote>
 <h1 id="0-自动化测试导论"><a href="#0-自动化测试导论" class="headerlink" title="0.自动化测试导论"></a>0.自动化测试导论</h1><p>由美团算法事件引入</p>
 <p>测试：质量，测试是质量保障的最主要手段之一</p>
@@ -262,6 +262,76 @@
 <p>生成基本路径</p>
 <p><strong>圈复杂性度量</strong>：一个图把平面分成的不相通的部分称为圈复杂性 |E|-|V|+2</p>
 <p>定理：|{基本路径集}|=|E|-|V|+2</p>
+<blockquote>
+<p>2020/09/18</p>
+</blockquote>
+<h2 id="考核"><a href="#考核" class="headerlink" title="考核"></a>考核</h2><p>选一个方向调研survey 20%</p>
+<p>选另外一个方向实现工具 35%</p>
+<p>期末考试 40%</p>
+<p>课堂报告 10%</p>
+<p>课堂小测试 5%</p>
+<p>图灵测试</p>
+<p>测试设计问题、测试预言问题、测试终止问题</p>
+<blockquote>
+<p>房春荣部分</p>
+<p>2020/09/23</p>
+</blockquote>
+<h1 id="2-自动化课程总览"><a href="#2-自动化课程总览" class="headerlink" title="2.自动化课程总览"></a>2.自动化课程总览</h1><p>基于截图理解的测试回放技术</p>
+<ul>
+<li>碎片化问题，加大测试难度</li>
+<li>动态内容，相似控件难识别</li>
+<li>基于图像理解技术，录制和回放跨平台的测试脚本</li>
+</ul>
+<p>控件定位，录制和回放的差异、目的、难点</p>
+<p>测试推荐</p>
+<p>RQ1:(有效性)此技术是否有效提高众包测试的质量？</p>
+<p>RQ2:(效率)此技术是否提高众包测试的效率？</p>
+<p>RQ3:(覆盖率)此技术是否提高众包测试的覆盖率？</p>
+<p>RQ4:(可用性)此技术对众包工人是否有用？</p>
+<p>自动化测试过后是否还需要人工测试–成本</p>
+<p>面向群体测试的测试自动回放（众包测试）</p>
+<p>与基于截图理解的测试回放技术相近（企业内）</p>
+<ul>
+<li>基于日志的轻量级测试自动回放</li>
+</ul>
+<p>面向移动应用人机协同智能化测试</p>
+<p>自动化软件测试发展路线</p>
+<ul>
+<li>确定步骤的自动化</li>
+<li>非确定步骤的自动化</li>
+<li>具有学习能力的自动化</li>
+</ul>
+<p>工程应用 – &gt; 测试大赛</p>
+<p>智能软件的Bug：删除少部分元素难以影响输出结果且反而可能提高了系统泛化能力</p>
+<p>面向智能软件的测试准则</p>
+<p>深度学习系统：数据驱动构建的弱控制流全变量非线性变化大规模数值计算程序</p>
+<p>难点</p>
+<ul>
+<li>高维输入：测试数据难以直接手动构造</li>
+<li>非线性变换：测试运算过程难以表示理解</li>
+<li>低维输出：测试输出结果难以准确判断</li>
+</ul>
+<p>面向深度学习的测试多样性度量</p>
+<p>随机抽取测试集 –&gt; 神经网络编码 –&gt; 熵度量 –&gt;</p>
+<p>​                            –&gt; 神经网络预测 –&gt; AUC统计 –&gt; 多样性分析</p>
+<p>深度学习系统的等价类测试</p>
+<p>高维输入：输入数据的等价类划分</p>
+<p>非线性变换：过程行为的等价类划分</p>
+<p>低维输出：输出结果的等价类划分</p>
+<p>重新定义等价类测试：从输入接口类型或功能点等价类划分，到流形分布特征的划分</p>
+<p>深度学习系统的边界值测试</p>
+<p>高维输入的微小扰动对非线性变换函数维度扭曲的边界影响分析</p>
+<p>深度学习系统的边界值测试理论分析</p>
+<p>面向智能软件的群体智能测试</p>
+<ul>
+<li>综合利用众包手段和及其手段来进行对抗数据的生成</li>
+<li>利用群智手段对第一阶段的样本进行清洗，保留高质量的错误测试样本</li>
+<li>对上阶段的错误样本进行不同维度的分类，为错误分析做准备</li>
+<li>为AI开发者提供良好的错误分析手段，多种可视化方式，便于定位</li>
+</ul>
+<p>利用众包进行验证分类工作、人机融合验证双重质量保证、提高数据质量</p>
+<p>可视化理解、缺陷理解、结构参数调节</p>
+<p>​                                                                          </p>
 
       
 
@@ -404,7 +474,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%AF%BC%E8%AE%BA"><span class="toc-number">1.</span> <span class="toc-text">0.自动化测试导论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%9B%BE%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA"><span class="toc-number">2.</span> <span class="toc-text">1.图测试理论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95"><span class="toc-number">2.1.</span> <span class="toc-text">常用测试方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%9F%BA%E7%A1%80"><span class="toc-number">2.2.</span> <span class="toc-text">图基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#n-%E8%B7%AF%E5%BE%84%E5%87%86%E5%88%99"><span class="toc-number">2.2.1.</span> <span class="toc-text">n-路径准则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%B7%AF%E5%BE%84%E5%87%86%E5%88%99"><span class="toc-number">2.2.2.</span> <span class="toc-text">主路径准则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%B7%AF%E5%BE%84%E5%87%86%E5%88%99"><span class="toc-number">2.2.3.</span> <span class="toc-text">基本路径准则</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%AF%BC%E8%AE%BA"><span class="toc-number">1.</span> <span class="toc-text">0.自动化测试导论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%9B%BE%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA"><span class="toc-number">2.</span> <span class="toc-text">1.图测试理论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95"><span class="toc-number">2.1.</span> <span class="toc-text">常用测试方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%9F%BA%E7%A1%80"><span class="toc-number">2.2.</span> <span class="toc-text">图基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#n-%E8%B7%AF%E5%BE%84%E5%87%86%E5%88%99"><span class="toc-number">2.2.1.</span> <span class="toc-text">n-路径准则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%B7%AF%E5%BE%84%E5%87%86%E5%88%99"><span class="toc-number">2.2.2.</span> <span class="toc-text">主路径准则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%B7%AF%E5%BE%84%E5%87%86%E5%88%99"><span class="toc-number">2.2.3.</span> <span class="toc-text">基本路径准则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%80%83%E6%A0%B8"><span class="toc-number">2.3.</span> <span class="toc-text">考核</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E8%87%AA%E5%8A%A8%E5%8C%96%E8%AF%BE%E7%A8%8B%E6%80%BB%E8%A7%88"><span class="toc-number">3.</span> <span class="toc-text">2.自动化课程总览</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -556,11 +626,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">计网</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">计网</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -576,15 +650,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">需求设计</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color4">物联网</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -592,11 +658,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">自动化测试</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">物联网</a>
+                <a href="javascript:void(0)" class="js-tag color5">需求设计</a>
               </li>
             
             <div class="clearfix"></div>
