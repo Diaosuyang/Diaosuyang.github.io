@@ -15,13 +15,13 @@
 <meta property="og:site_name" content="CHAOS&#39;s blog">
 <meta property="og:description" content="大数据分析课堂笔记">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2020/09/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/..%5Cimg%5C1.png">
+<meta property="og:image" content="http://example.com/2020/09/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/..%5Cimg%5C%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%5CMapReduce%E4%B8%8E%E4%BC%A0%E7%BB%9F%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E6%AF%94%E8%BE%83.png">
 <meta property="article:published_time" content="2020-09-08T05:56:06.428Z">
-<meta property="article:modified_time" content="2020-09-22T06:30:01.991Z">
+<meta property="article:modified_time" content="2020-10-13T06:08:27.265Z">
 <meta property="article:author" content="CHAOS">
 <meta property="article:tag" content="大数据分析">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2020/09/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/..%5Cimg%5C1.png">
+<meta name="twitter:image" content="http://example.com/2020/09/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/..%5Cimg%5C%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%5CMapReduce%E4%B8%8E%E4%BC%A0%E7%BB%9F%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E6%AF%94%E8%BE%83.png">
   
     <link rel="alternative" href="/atom.xml" title="CHAOS&#39;s blog" type="application/atom+xml">
   
@@ -67,8 +67,8 @@
 			</ul>
 		</nav>
 		<nav>
-			<a>总文章数 26</a>
-			<a>|总字数 <span class="post-count">66.5k</span></a>
+			<a>总文章数 31</a>
+			<a>|总字数 <span class="post-count">76.3k</span></a>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -214,7 +214,7 @@
 </ul>
 <p>Hadoop发展简史</p>
 <p>MapReduce与传统关系型数据库比较</p>
-<p><img src="..%5Cimg%5C1.png" alt="1"></p>
+<p><img src="..%5Cimg%5C%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%5CMapReduce%E4%B8%8E%E4%BC%A0%E7%BB%9F%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E6%AF%94%E8%BE%83.png" alt="1"></p>
 <p>Hadoop优点：可靠、高效、低成本、运行于Linux平台、支持多种编程语言</p>
 <p>HDFS、MapReduce</p>
 <blockquote>
@@ -332,6 +332,172 @@
 </ul>
 </li>
 </ul>
+<h1 id="第6章-分类"><a href="#第6章-分类" class="headerlink" title="第6章 分类"></a>第6章 分类</h1><p>数据类型</p>
+<ul>
+<li><p>Vetorial data: physical attributes\behavioral attributes\context\history\etc</p>
+</li>
+<li><p>text and hypertext</p>
+</li>
+<li><p>email</p>
+</li>
+<li><p>protein sequences</p>
+</li>
+<li><p>sequences of Unix system calls</p>
+</li>
+<li><p>network layout: graph</p>
+</li>
+<li><p>images</p>
+</li>
+</ul>
+<p>Training and Validation</p>
+<h2 id="常用分类方法"><a href="#常用分类方法" class="headerlink" title="常用分类方法"></a>常用分类方法</h2><p>Bayes,Decision Tree,SVM,KNN,Logistic Regression,神经网络，深度学习，集成学习</p>
+<p>基础知识：条件概率、全概率公式、贝叶斯定理</p>
+<p>ID3算法、信息熵、信息增益</p>
+<h2 id="CART算法"><a href="#CART算法" class="headerlink" title="CART算法"></a>CART算法</h2><p>Classification And Regression Tree</p>
+<p>分类回归树算法，简称CART算法</p>
+<p>步骤</p>
+<ul>
+<li>将样本递归划分进行建树过程</li>
+<li>用验证数据进行剪枝</li>
+</ul>
+<p>CINI指数 </p>
+<ul>
+<li>总体内包含的类别越杂乱，GINI指数就越大（与熵概念类似）</li>
+</ul>
+<h2 id="KNN算法"><a href="#KNN算法" class="headerlink" title="KNN算法"></a>KNN算法</h2><h2 id="分类方法评价"><a href="#分类方法评价" class="headerlink" title="分类方法评价"></a>分类方法评价</h2><h2 id="SVM"><a href="#SVM" class="headerlink" title="SVM"></a>SVM</h2><h1 id="第7章-聚类"><a href="#第7章-聚类" class="headerlink" title="第7章 聚类"></a>第7章 聚类</h1><p>什么是聚类：无监督学习</p>
+<p>达到的目的：类内高相似，类间低相似</p>
+<p>聚类的应用：城市规划、市场营销、保险定制、地震学</p>
+<p>注意：聚类是主观的</p>
+<p>度量距离：不相似程度 D(O<del>1</del>, O<del>2</del>)</p>
+<h2 id="编辑距离"><a href="#编辑距离" class="headerlink" title="编辑距离"></a>编辑距离</h2><p>一个string Q可以通过替换、插入、删除转变成另一个string C，但是这种转换需要一定的代价cost，而两个string的相似度则定义为最小的代价</p>
+<p>距离度量的特性:</p>
+<ul>
+<li>对称性：D(A,B) = D(B,A)</li>
+<li>自相似性：D(A,A) = 0</li>
+<li>正向性：D(A,B) = 0 IIF A=B</li>
+<li>三角不等式：D(A,B) $\leq$ D(A,C) + D(B,C)</li>
+</ul>
+<p>一个聚类算法理想的性质</p>
+<ul>
+<li><p>时间空间上的稳定性</p>
+</li>
+<li><p>有能力处理不同的数据类型</p>
+</li>
+<li><p>对于领域专业知识的要求最小化</p>
+</li>
+<li><p>很好的处理噪音和异常</p>
+</li>
+<li><p>对于输入顺序不敏感</p>
+</li>
+<li><p>容易使用且结果容易理解</p>
+</li>
+<li><p>结合用户指定的约束</p>
+</li>
+</ul>
+<p>类簇与离群点</p>
+<p>硬聚类，软聚类</p>
+<h2 id="方法论"><a href="#方法论" class="headerlink" title="方法论"></a>方法论</h2><h3 id="分区方法"><a href="#分区方法" class="headerlink" title="分区方法"></a>分区方法</h3><ul>
+<li>Partitioning methods 分区方法：将n个对象的数据库D的分区构造为一组的k个簇</li>
+<li>Given a <em>k</em>, find a partition of <em>k</em>  <em>clusters</em> that optimizes the chosen partitioning criterion<ul>
+<li>Global optimal 全局最优：穷尽枚举所有的划分（启发式算法</li>
+<li>Heuristic methods : k-means and k-medoids algorithms</li>
+<li><strong><em>k-means</em></strong> : 每个群集由集群的中心来表示</li>
+<li><strong><em>k-medoids</em></strong> or PAM ：每个群集由集群其中一个对象来表示、</li>
+</ul>
+</li>
+</ul>
+<p>启发式算法：</p>
+<ul>
+<li>仿动物类<ul>
+<li>粒子群优化</li>
+<li>蚂蚁优化</li>
+<li>鱼群算法</li>
+<li>蜂群算法</li>
+</ul>
+</li>
+<li>仿植物类<ul>
+<li>向光性算法</li>
+<li>杂草优化算法</li>
+</ul>
+</li>
+<li>仿人类<ul>
+<li>和声搜索</li>
+</ul>
+</li>
+</ul>
+<p>启发式算法在实践上可行，但缺乏数学理论依托（无法解释为什么可行）。启发式算法何时停止/收敛是一个难题</p>
+<p>K-Means：K均值聚类算法<br>$$<br>\vec{\mu} (c) = \frac{1}{|C|}\sum_{\vec{x}\in C}\vec{x}<br>$$<br>算法计算：填充聚集、终止条件</p>
+<ol>
+<li>首先确定k（簇数）</li>
+<li>随机选择k个点作为k个聚类的重心来初始化聚类，保证每一个点都与其他的点尽可能原</li>
+<li>填充每个聚类<ol>
+<li>对于每个点，将其放置在当前质心最近</li>
+<li>分配所有点后，更新k个簇的质心的位置</li>
+<li>将所有点重新分配到它们最近的质心<ul>
+<li>有时在群集之间移动点</li>
+</ul>
+</li>
+<li>重复2和3直到收敛<ul>
+<li>收敛：点在群集之间不移动和质心稳定</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>终止条件<ul>
+<li>固定数量的迭代</li>
+<li>文档分区不变</li>
+<li>重心位置不变</li>
+</ul>
+</li>
+</ol>
+<p>如何选择k？ 尝试不同的k查看变换直到结果变换幅度趋缓</p>
+<p>K-Means优缺点（基于聚合）</p>
+<p>Strengths</p>
+<ol>
+<li>Relatively efficient: O(tkn), where n is # objects, k is #<br>clusters, and t is # iterations. Normally, k, t &lt;&lt; n.</li>
+<li>Often terminates at a local optimum. The global optimum may<br>be found using techniques such as simulated annealing and<br>genetic algorithms</li>
+</ol>
+<p>Weaknesses</p>
+<ol>
+<li>Applicable only when mean is defined (what about categorical<br>data?)</li>
+<li>Need to specify k, the number of clusters, in advance</li>
+<li>Trouble with noisy data and outliers</li>
+<li>Not suitable to discover clusters with non-convex shapes</li>
+</ol>
+<h3 id="层次方法"><a href="#层次方法" class="headerlink" title="层次方法"></a>层次方法</h3><p>不需要开始时初定k值，但需要更为严格的终止条件（基于划分）</p>
+<p>closest pair of clusters</p>
+<ul>
+<li>Many variants to defining closest pair of clusters</li>
+<li>Single-link : Similarity of the most cosine-similar (single-link)</li>
+<li>Complete-link : Similarity of the “furthest” points, the least cosine-similar</li>
+<li>Centroid : Clusters whose centroids (centers of gravity) are</li>
+<li>the most cosine-similar Average-link : Average cosine between pairs of elements</li>
+</ul>
+<p>层次聚类两个问题</p>
+<p>（1）How to represent a cluster of many points?</p>
+<p>（2）How to determine “nearness” of clusters?</p>
+<p>非欧式案例 Non-Euclidean case</p>
+<p>（1）How to represent a cluster of many points?</p>
+<p>Approach1：</p>
+<p>定义<strong>clustroid</strong>为(data)point “closest” to other points</p>
+<ul>
+<li>Smallest maximum distance to other points</li>
+<li>Smallest average distance to other points</li>
+<li>Smallest sum of squares of distances to other points</li>
+</ul>
+<p>（2）How to determine “nearness” of clusters?</p>
+<p>Approach 2:<br><strong>Intercluster distance</strong> = minimum of the distances between any two points, one from each cluster</p>
+<p>Approach 3:<br>Pick a notion of “<strong>cohesion</strong>” of clusters, e.g., maximum distance from the clustroid</p>
+<ul>
+<li>Merge clusters whose union is most cohesive</li>
+</ul>
+<p>判断标准</p>
+<p>Approach 3.1: Use the <em>diameter</em> of the merged cluster = maximum distance between points in the cluster<br>Approach 3.2: Use the <em>average distance</em> between points in the cluster<br>Approach 3.3: Use a <em>density-based approach</em><br>Take the diameter or avg. distance, e.g., and divide by the number of points in the cluster</p>
+<p>高复杂度 $O(N^3)$</p>
+<p>使用优先队列可以降低复杂度至$O(N^2logN)$</p>
+<h3 id="模型方法"><a href="#模型方法" class="headerlink" title="模型方法"></a>模型方法</h3><p>基于概率模型与神经网络的方法，生成模型</p>
+<h3 id="密度方法"><a href="#密度方法" class="headerlink" title="密度方法"></a>密度方法</h3><h1 id="第8章-推荐系统"><a href="#第8章-推荐系统" class="headerlink" title="第8章 推荐系统"></a>第8章 推荐系统</h1><p>推荐系统统一推荐、用户个性化推荐</p>
+<p>推荐 – 搜索</p>
 
       
 
@@ -474,7 +640,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC1%E7%AB%A0-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AF%BC%E8%AE%BA"><span class="toc-number">1.</span> <span class="toc-text">第1章 大数据导论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%80%83%E6%A0%B8%E8%A6%81%E6%B1%82"><span class="toc-number">1.1.</span> <span class="toc-text">考核要求</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC2%E7%AB%A0-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0"><span class="toc-number">2.</span> <span class="toc-text">第2章 大数据平台</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC3%E7%AB%A0-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%82%A8%E5%AD%98%E5%92%8C%E5%A4%84%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">第3章 大数据储存和处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hadoop%E4%BB%8B%E7%BB%8D"><span class="toc-number">3.1.</span> <span class="toc-text">Hadoop介绍</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC4%E7%AB%A0-%E9%93%BE%E6%8E%A5%E5%88%86%E6%9E%90"><span class="toc-number">4.</span> <span class="toc-text">第4章 链接分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC5%E7%AB%A0-%E6%95%B0%E6%8D%AE%E9%99%8D%E7%BB%B4"><span class="toc-number">5.</span> <span class="toc-text">第5章 数据降维</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC1%E7%AB%A0-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AF%BC%E8%AE%BA"><span class="toc-number">1.</span> <span class="toc-text">第1章 大数据导论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%80%83%E6%A0%B8%E8%A6%81%E6%B1%82"><span class="toc-number">1.1.</span> <span class="toc-text">考核要求</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC2%E7%AB%A0-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0"><span class="toc-number">2.</span> <span class="toc-text">第2章 大数据平台</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC3%E7%AB%A0-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%82%A8%E5%AD%98%E5%92%8C%E5%A4%84%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">第3章 大数据储存和处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hadoop%E4%BB%8B%E7%BB%8D"><span class="toc-number">3.1.</span> <span class="toc-text">Hadoop介绍</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC4%E7%AB%A0-%E9%93%BE%E6%8E%A5%E5%88%86%E6%9E%90"><span class="toc-number">4.</span> <span class="toc-text">第4章 链接分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC5%E7%AB%A0-%E6%95%B0%E6%8D%AE%E9%99%8D%E7%BB%B4"><span class="toc-number">5.</span> <span class="toc-text">第5章 数据降维</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC6%E7%AB%A0-%E5%88%86%E7%B1%BB"><span class="toc-number">6.</span> <span class="toc-text">第6章 分类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%88%86%E7%B1%BB%E6%96%B9%E6%B3%95"><span class="toc-number">6.1.</span> <span class="toc-text">常用分类方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CART%E7%AE%97%E6%B3%95"><span class="toc-number">6.2.</span> <span class="toc-text">CART算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#KNN%E7%AE%97%E6%B3%95"><span class="toc-number">6.3.</span> <span class="toc-text">KNN算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%E6%96%B9%E6%B3%95%E8%AF%84%E4%BB%B7"><span class="toc-number">6.4.</span> <span class="toc-text">分类方法评价</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SVM"><span class="toc-number">6.5.</span> <span class="toc-text">SVM</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC7%E7%AB%A0-%E8%81%9A%E7%B1%BB"><span class="toc-number">7.</span> <span class="toc-text">第7章 聚类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB"><span class="toc-number">7.1.</span> <span class="toc-text">编辑距离</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E8%AE%BA"><span class="toc-number">7.2.</span> <span class="toc-text">方法论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%8C%BA%E6%96%B9%E6%B3%95"><span class="toc-number">7.2.1.</span> <span class="toc-text">分区方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%82%E6%AC%A1%E6%96%B9%E6%B3%95"><span class="toc-number">7.2.2.</span> <span class="toc-text">层次方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E6%96%B9%E6%B3%95"><span class="toc-number">7.2.3.</span> <span class="toc-text">模型方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E5%BA%A6%E6%96%B9%E6%B3%95"><span class="toc-number">7.2.4.</span> <span class="toc-text">密度方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC8%E7%AB%A0-%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F"><span class="toc-number">8.</span> <span class="toc-text">第8章 推荐系统</span></a></li></ol>
                     </div>
                 </span>
             </div>

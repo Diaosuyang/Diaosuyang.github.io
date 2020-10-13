@@ -61,8 +61,8 @@
 			</ul>
 		</nav>
 		<nav>
-			<a>总文章数 26</a>
-			<a>|总字数 <span class="post-count">66.5k</span></a>
+			<a>总文章数 31</a>
+			<a>|总字数 <span class="post-count">76.3k</span></a>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -148,6 +148,438 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-操作系统第一次实验_问答题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/13/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%AE%9E%E9%AA%8C_%E9%97%AE%E7%AD%94%E9%A2%98/">操作系统第一次实验问答题部分</a>
+    </h1>
+  
+
+        
+        <a href="/2020/10/13/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%AE%9E%E9%AA%8C_%E9%97%AE%E7%AD%94%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2020-10-13T02:59:12.889Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>c问答题一共16道，随机抽数道进行提问</p>
+<ol>
+<li><strong>请简述80x86 系列的发展历史</strong></li>
+</ol>
+<p>1978年6月，intel推出第一款16位微处理器8086，采用20位地址线<br>1982年发布80286，主频提高至12MHz<br>1985年发布80386，处理器变为32位，地址线扩展至32位<br>1989年发布80486，1993年发布80586并命名为奔腾</p>
+<ol start="2">
+<li><strong>说明小端和大端的区别，并说明80x86 系列采用了哪种方式？</strong></li>
+</ol>
+<p>1)大端模式：高位字节排放在内存的低地址端，低位字节排放在内存的高地址端。</p>
+<p>2)小端模式：低位字节排放在内存的低地址端，高位字节排放在内存的高地址端。</p>
+<p>80x86采用的是小端模式</p>
+<ol start="3">
+<li><strong>80x86 有哪五类寄存器，请分别举例说明其作用？</strong></li>
+</ol>
+<p>数据寄存器：包括AX( AH, AL) , BX, CX, DX在内，用于存放数据</p>
+<p>指针寄存器：包括堆栈指针SP( 与堆栈段SS配合使用，指向目前的堆栈位置) 与 基数指针BP( 可用作堆栈段SS的一个相对基址位置)</p>
+<p>变址寄存器：包括原变址SI( 可用来存放相对于数据段DS的原变址指针) 与目的变址DI( 用来存放相对于附加段ES的目的变址指针)</p>
+<p>以上三类合称为通用寄存器</p>
+<p>控制寄存器：包括指令指针IP、状态标志FLAG。用来存放控制信息</p>
+<p>段寄存器：代码段CS、数据段DS、堆栈段SS、附加段ES，存放对应信息</p>
+<ol start="4">
+<li><strong>什么是寻址？立即寻址和直接寻址的区别是什么？</strong></li>
+</ol>
+<p>寻址：找到操作数的地址（从而能够取出操作数）</p>
+<p>立即寻址：直接给出了操作数，实际上没有寻址</p>
+<p>寄存器寻址：操作数在寄存器内，给出寄存器名即可取出操作数</p>
+<ol start="5">
+<li><strong>请举例说明寄存器间接寻址、寄存器相对寻址、基址加变址寻址、相对基址加变址寻址四种方式的区别</strong></li>
+</ol>
+<p><em>寄存器间接寻址：</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov  AX, [BX] </span><br></pre></td></tr></table></figure>
+
+<p>操作数有效地址在寄存器之中，但操作数的有效地址由SI,DI,BX,BP指定,其中SI,DI,BX默认的段寄存器是DS,BP默认的段是SS.</p>
+<p><em>寄存器相对寻址：</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov  AX, [SI + i]</span><br></pre></td></tr></table></figure>
+
+<p>操作数的有效地址是一个基址或变址寄存器的内容和指令中指定的8位或16位位移量(displacement)之和. ( i为指令数)</p>
+<p><em>基址加变址：i</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov  AX, [BX + DI]</span><br></pre></td></tr></table></figure>
+
+<p>操作数的有效地址是一个基址寄存器和一个变址寄存器的内容之和,默认段寄存器为基址寄存器的默认段寄存器.</p>
+<p><em>相对基址加变址：</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov AX, [BX + DI + i]</span><br></pre></td></tr></table></figure>
+
+<p>操作数的有效地址是一个基址寄存器和一个变址寄存器的内容和8位或16位位移量之和 ( i为指令数)</p>
+<ol start="6">
+<li><strong>请分别简述MOV 指令和LEA 指令的用法和作用？</strong></li>
+</ol>
+<p>mov对寄存器值或变量值进行操作，进行数据传递</p>
+<p>对于变量，加不加[]都表示取值；对于寄存器而言，无[]表示取值，有[]表示取地址。</p>
+<p>lea是取源操作数的偏移地址，并将其传送到目的操作数单元。类似于C语言的取地址符&amp;。</p>
+<p>对于变量，其后面的有无[]皆可，都表示取变量地址，相当于指针；对于寄存器而言，无[]表示取地址，有[]表示取值。</p>
+<ol start="7">
+<li><strong>请说出主程序与子程序之间至少三种参数传递方式</strong></li>
+</ol>
+<p>利用寄存器传递参数</p>
+<p>利用约定的地址传递参数</p>
+<p>利用堆栈传递参数(常用)</p>
+<ol start="8">
+<li><p><strong>如何处理输入和输出，代码中哪里体现出来？</strong></p>
+</li>
+<li><p><strong>有哪些段寄存器</strong></p>
+</li>
+</ol>
+<p>代码段CS、数据段DS、堆栈段SS、附加段ES</p>
+<ol start="10">
+<li><p>通过什么寄存器保存前一次的运算结果，在代码中哪里体现出来。</p>
+</li>
+<li><p><strong>解释boot.asm 文件中，org 0700h 的作用</strong></p>
+</li>
+</ol>
+<p>告诉汇编器，当前这段代码会放在07c00h处。所以，如果之后遇到需要绝对寻址地指令，那么绝对地址就是07c00h加上相对地址。</p>
+<ol start="12">
+<li><strong>boot.bin 应该放在软盘的哪一个扇区？为什么？</strong></li>
+</ol>
+<p>第一个扇区</p>
+<p>BIOS程序检查软盘0面0磁道1扇区，如果扇区以0xaa55结束，则认定为引导扇区，将其512字节的数据加载到内存的07c00处，然后设置PC，跳到内存07c00处开始执行代码。</p>
+<ol start="13">
+<li><strong>loader 的作用有哪些？</strong></li>
+</ol>
+<p>突破512字节的限制</p>
+<p>将内核载入内存</p>
+<ol start="14">
+<li><strong>解释NASM 语言中[ ] 的作用</strong></li>
+</ol>
+<p>mov对寄存器值或变量值进行操作，进行数据传递</p>
+<p>对于变量，加不加[]都表示取值；对于寄存器而言，无[]表示取值，有[]表示取地址。</p>
+<p>lea是取源操作数的偏移地址，并将其传送到目的操作数单元。类似于C语言的取地址符&amp;。</p>
+<p>对于变量，其后面的有无[]皆可，都表示取变量地址，相当于指针；对于寄存器而言，无[]表示取地址，有[]表示取值。</p>
+<ol start="15">
+<li><strong>解释语句times 510-($-$$) db 0，为什么是510? $ 和$$ 分别表示什么？</strong></li>
+</ol>
+<p>填充了这些0之后，从程序开始到最后一个0，一共是510个字节。再加上最后的dw两个字节(0xaa55是结束标志)，整段程序的大小就是512个字节，刚好占满一个扇区</p>
+<p>$表示当前行的偏移地址,$$表示当前段的起始偏移地址,</p>
+<ol start="16">
+<li><strong>解释配置文件bochsrc 文件中各参数的含义</strong><br>megs:32<br>display_library: sdl<br>floppya: 1_44=a.img, status=inserted<br>boot: floppy</li>
+</ol>
+<p>megs：虚拟机内存大小 (MB)</p>
+<p>display_library: bochs使用的GUI库，在Ubuntu下面是sdl</p>
+<p>floppya：虚拟机外设，软盘为a.img文件</p>
+<p>boot：虚拟机启动方式，从软盘启动</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">操作系统</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/10/13/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%AE%9E%E9%AA%8C_%E9%97%AE%E7%AD%94%E9%A2%98/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-nasm操作码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>mov    eax, 1    ; invoke SYS_EXIT ( kernel opcode 1) </p>
+<p>mov    eax, 3     ; invoke SYS_READ ( kernel opcode 3)</p>
+<p>mov    eax, 4     ; invoke SYS_WRITE ( kernel opcode 4)</p>
+<p>mov    eax, 11     ; invoke SYS_EXECVE ( kernel opcode 11)</p>
+<p>mov    eax, 13     ; invoke SYS_TIME ( kernel opcode 13)</p>
+<ul>
+<li>+ int 80h</li>
+</ul>
+<p>mov    ebx, 0    ; return 0 status on exit - ‘No Errors’</p>
+<p>mov    ebx, 1    ; write to the STDOUT file</p>
+<ul>
+<li>+ int 80h</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/10/12/nasm%E6%93%8D%E4%BD%9C%E7%A0%81/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-游戏经历" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>卡牌：炉石传说、百闻牌</p>
+<p>类魂：黑暗之魂3、仁王</p>
+<p>恐怖：还愿、恐怖外婆</p>
+<p>FPS：和平精英、死亡空间系列</p>
+<p>即时战略：星际争霸1、2</p>
+<p>战棋游戏：原石计划、多多自走棋</p>
+<p>MOBA：英雄联盟、虚荣</p>
+<p>RPG：怪物世界、永远的七日之都、诸神皇冠</p>
+<p>动作：聚爆、金属对决</p>
+<p>开放世界：原神、刺客信条</p>
+<p>塔防：植物大战僵尸、钢铁战队</p>
+<p>音乐：节奏大师、音乐世界Cytus2</p>
+<p>诸如此类，等等等等</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/10/09/%E6%B8%B8%E6%88%8F%E7%BB%8F%E5%8E%86/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-鸿蒙OS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <table>
+<thead>
+<tr>
+<th>更新时间</th>
+<th>更新内容</th>
+<th>版本号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2020/10/06</td>
+<td>初稿</td>
+<td>v0.0.0</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>​        近几天本人浏览了HarmonyOS的开源gitee地址的部分代码以及一些论坛大佬们对于鸿蒙的分析，自己有了一些对于鸿蒙产品开发与目前鸿蒙2.0的想法，接下来简单地阐述个人的观点。</p>
+<p>​        鸿蒙产品在产品定位上，要对标的是Windows、Android、IOS这样的能够直接使用的完整系统，而不是Linux这一类只具备进程调度、文件管理等等功能的一个内核。这样一款新型的操作系统，是中国科技对现有操作系统厂商的挑战，也是国际矛盾激化下的必要。鸿蒙的开发是中国当下科技环境的关键突破口，也是华为短期放弃海外市场、收拢国内市场的战略操作体现。</p>
+<p>​        从华为的规划上来看，鸿蒙的未来开发过程如下：2020年9月10日开源的代码面向内存128KB-128MB的终端设备，计划在2021年4月实现面向内存128MB-4GB的终端设备、在2021年10月后逐渐实现面向4GB以上的所有设备。开源仓库中的项目文档明确的API参数输入输出，比起1年前的PPT系统有了更为明确的规划。大量的开源代码也为鸿蒙的实现提供了说服力。</p>
+<p>​        回归到目前华为开放出来的鸿蒙2.0系统，从华为的官方文档中可以查阅到，目前的整体内核部署已经逐渐成型，API下明确的输入输出参数也使得整体的项目架构更加清晰完善。不过，目前系统环境的搭建推荐使用Hi35xx系列的芯片，缺少对其他芯片的支持，还保留有开发过程中的高度局限性。其系统内核轻薄快捷，各类子系统都易于理解，很容易实现内核版本移植与扩展。但在编码方面仍存在不少缺陷以及一些亟待改正的问题，包括用switch采样率转化算法来处理音频，men.c内核代码文件大量return 0的问题。</p>
+<p>​        在基于鸿蒙OS的软件开发中，华为提供了为鸿蒙OS专门设计的开发IDE：DevEco Studio，目前仅支持windows10。据华为官方文档所述，该IDE支持多语言的开发、构建、发布并支持多模拟器。但就目前的项目来看，鸿蒙仅支持TV，Wearable，Lite Wearable三种设备，不支持PC与移动产品，局限程度较高。开发过程中遇到的问题还有很多：总体的开发环境由于缺少热加载与页面调试工具，每次修改需要重新编译，耗时过多；代码编写没有报错提示、代码自动补全并不完善，总体代码编写环境与简单文本文件编辑环境相类似；很多官方举出的例子也没有能够正常运行。</p>
+<p>​        从目前的产品市场来看，鸿蒙想要在当前市场具有一定的竞争力，必须要有一定兼容现有市场上已有的包括Android在内主流平台软件产品的能力，这就必然要求鸿蒙的整体架构需要包含Android、Linux等系统的微内核，这在目前鸿蒙的开放文档中已经有所体现，在实际的代码中，我们也可以看到部分安卓代码。这一类型的开发在面向其他平台进行开发时也会有其他体现，包括兼容部分Windows、Linux的代码。</p>
+<p>​        总结一下，鸿蒙OS现在处于开发状态，短期内也将处于开发状态，还远达不到目前市面上操作系统的开发程序，不过我们已经看到了它的雏形。正如新生的孩童一般，鸿蒙将持续发展下去，而这一步，需要中国国民乃至于世界人民的共同养育。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/10/06/%E9%B8%BF%E8%92%99OS/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-游戏设计概念" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>游戏设计概念</p>
+<h1 id="游戏表现力"><a href="#游戏表现力" class="headerlink" title="游戏表现力"></a>游戏表现力</h1><h2 id="吸引锚"><a href="#吸引锚" class="headerlink" title="吸引锚"></a>吸引锚</h2><h2 id="场景视角"><a href="#场景视角" class="headerlink" title="场景视角"></a>场景视角</h2><p>第一人称视角：限制较大、基本内定为射击游戏</p>
+<p>第二人称视角：过于奇葩、不予考虑</p>
+<p>第三人称视角：</p>
+<ul>
+<li>固定视角：限制较大、基本内定为动作游戏/解密游戏</li>
+<li>跟随视角：限制最少、用途最广，具备第一人称视角的剧情表达力与固定视角甚至上帝视角的掌控力</li>
+</ul>
+<p>上帝视角：全局把控、多人操作</p>
+<h1 id="游戏体验"><a href="#游戏体验" class="headerlink" title="游戏体验"></a>游戏体验</h1><h2 id="代入感"><a href="#代入感" class="headerlink" title="代入感"></a>代入感</h2><p>探索未知的地图</p>
+<p>和玩家一起了解世界</p>
+<p>和玩家一起成长</p>
+<p>丰富的主线后剧情</p>
+<h1 id="编剧"><a href="#编剧" class="headerlink" title="编剧"></a>编剧</h1>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/09/25/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E6%A6%82%E5%BF%B5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-嵌入式物联网第一次作业20200921" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -431,21 +863,6 @@
     <article id="post-自动化测试课堂笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/09/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/">自动化测试</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/09/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-09-09T05:47:49.048Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-09</time>
-</a>
-        
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
         <p>自动化测试课堂笔记</p>
@@ -505,596 +922,9 @@
 
 
   
-    <article id="post-嵌入式物联网概论课堂笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/09/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%89%A9%E8%81%94%E7%BD%91%E6%A6%82%E8%AE%BA%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/">嵌入式物联网概论</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/09/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%89%A9%E8%81%94%E7%BD%91%E6%A6%82%E8%AE%BA%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-09-09T02:28:48.341Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>嵌入式物联网课堂笔记</p>
-        
-          <a class="article-more-a" href="/2020/09/09/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%89%A9%E8%81%94%E7%BD%91%E6%A6%82%E8%AE%BA%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">物联网</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/09/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%89%A9%E8%81%94%E7%BD%91%E6%A6%82%E8%AE%BA%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-大数据分析课堂笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/">大数据分析课堂笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-09-08T05:56:06.428Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>大数据分析课堂笔记</p>
-        
-          <a class="article-more-a" href="/2020/09/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">大数据分析</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-操作系统.课堂笔记md" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/07/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0md/">计算机操作系统课程笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/07/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0md/" class="archive-article-date">
-  	<time datetime="2020-09-07T06:01:27.736Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>操作系统课堂笔记</p>
-        
-          <a class="article-more-a" href="/2020/09/07/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0md/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">操作系统</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/07/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0md/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-需求设计纲要" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/07/%E9%9C%80%E6%B1%82%E8%AE%BE%E8%AE%A1%E7%BA%B2%E8%A6%81/">需求设计纲要</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/07/%E9%9C%80%E6%B1%82%E8%AE%BE%E8%AE%A1%E7%BA%B2%E8%A6%81/" class="archive-article-date">
-  	<time datetime="2020-09-07T02:12:26.746Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>需求设计课程笔记</p>
-<h1 id="0-需求设计纲要"><a href="#0-需求设计纲要" class="headerlink" title="0.需求设计纲要"></a>0.需求设计纲要</h1><blockquote>
-<p>2020/09/07  1</p>
-</blockquote>
-<h3 id="组成成分的角度"><a href="#组成成分的角度" class="headerlink" title="组成成分的角度"></a>组成成分的角度</h3><p>软件：代码 + 文档</p>
-<p>代码：数据结构 + 算法</p>
-<p>数据结构：数据元素之间的逻辑结构和物理结构</p>
-<p>算法：有穷明确可执行的指令集 + 计算平台</p>
-<p>计算平台：编译器/硬件 + 操作系统</p>
-<h3 id="从问题求解的角度"><a href="#从问题求解的角度" class="headerlink" title="从问题求解的角度"></a>从问题求解的角度</h3><p>作为一种复杂的信息制品，软件是对客观事物的深度抽象和建模，且同时包含了对复杂客观世界的<strong>问题空间</strong>与<strong>解空间</strong>的具体描述</p>
-<p>问题的产生地：当现实的状况与人们期望的状况产生差距时，就产生了问题</p>
-<p>要解决问题，就需要改变现实当中某些实体的状态或改变实体状态变化的演进顺序，使其打到期望的状态或演进顺序</p>
-<p>这些尸体和状态构成了问题解决的基本范围，称为该问题的问题域</p>
-<p>软件系统通过影响问题域，能够帮助人们解决问题，称为解系统</p>
-<p>软件系中的某些部分对问题域中的某些部分具有模拟特性</p>
-<p>通过映射建立的共同知识，就是问题域和解系统之间的共享现象</p>
-<h2 id="需求维度"><a href="#需求维度" class="headerlink" title="需求维度"></a>需求维度</h2><p>需求（要求，问题域端）</p>
-<ul>
-<li>直接需求，间接需求</li>
-<li>不切实际的期望</li>
-</ul>
-<p>需求规格说明（解系统端）</p>
-<ul>
-<li>数据：现实世界模型</li>
-<li>功能：在问题域内通过改变状态或演进顺序解决问题<ul>
-<li>过程式分析：以功能分解为核心</li>
-<li>面向对象式分析：以封装的数据与对数据的操作为核心</li>
-</ul>
-</li>
-</ul>
-<p>需求的四个基本概念：问题域、需求、解系统、需求规格说明</p>
-<p>需求的定义</p>
-<blockquote>
-<p>2020/09/07  2</p>
-</blockquote>
-<h2 id="需求工程的概念"><a href="#需求工程的概念" class="headerlink" title="需求工程的概念"></a>需求工程的概念</h2><p>软件工程的一个分支</p>
-<p>需求错误的高代价性</p>
-<p>需求工程的基本活动与实质：问题域、目标、任务、交互</p>
-<p>需求工程活动的困难性</p>
-<ul>
-<li>问题域、目标、任务、交互的相互转化是创造性活动</li>
-<li>编程与设计方面的能力不能直接用于需求分析</li>
-<li>文档撰写、功能验证、基线管理需要丰富的开发与管理经验</li>
-</ul>
-<h2 id="商业模式"><a href="#商业模式" class="headerlink" title="商业模式"></a>商业模式</h2><p>从业务转向“人”：商业模式的重构</p>
-<p>商业模式原理</p>
-<p>商业模式定义：一个商业模式描述的是一个组织创造、传递以及获得价值的基本原理，其本质在于价值的流动</p>
-<p>价值创造与流动过程</p>
-<p><em>需求设计也需要掌握商业模式设计</em></p>
-<p>围绕商业模式的基本活动</p>
-<p>画布：基本模型与工具</p>
-<p>类型：利用画布分析常见的商业模式</p>
-<p>设计：商业模式的构建手段</p>
-<p>战略：</p>
-<p>流程：</p>
-<blockquote>
-<p>2020/09/14  1</p>
-</blockquote>
-<h1 id="1-商业模式画布"><a href="#1-商业模式画布" class="headerlink" title="1. 商业模式画布"></a>1. 商业模式画布</h1><p>我们想要的商业模式模型</p>
-<ul>
-<li>人人都能理解，容易达成共识</li>
-<li>易于建模和操作</li>
-<li>依然具有分析负责情况的能力</li>
-</ul>
-<p>商业模式画布概念</p>
-<p>九大模块</p>
-<p>客户细分</p>
-<ul>
-<li><p>一家企业想要获得的和期望服务的不同的目标人群和机构</p>
-<ul>
-<li><p>细分条件：需求催生新供给、需求新分销渠道和客户关系类型、产生的利润率不同、愿意为某方面的特殊改进买单</p>
-</li>
-<li><p>需谨慎处理客户的细分与取舍</p>
-</li>
-</ul>
-</li>
-<li><p>划分方式举例</p>
-<ul>
-<li>大众市场</li>
-<li>小众市场</li>
-<li>求同存异的客户群体</li>
-<li>多元化客户群体</li>
-<li>多边平台/市场</li>
-</ul>
-</li>
-</ul>
-<p>价值主张</p>
-<ul>
-<li>为某一客户群体提供能为其创作价值的产品和服务</li>
-<li>有益于价值创造的因素<ul>
-<li>创新：满足用户未曾察觉全新需求（没有类似产品的</li>
-<li>性能：PC机与显卡（摩尔定律），智能手机</li>
-<li>定制：大规模定制与用户参与创作</li>
-<li>保姆式/一站式服务：咨询公司</li>
-<li>设计：时尚、消费电子产品</li>
-<li>品牌/地位：奢侈品、潮牌、游戏等</li>
-<li>价格：廉价航空，小米，免费经济</li>
-<li>缩减成本：服务外包</li>
-<li>风险控制</li>
-<li>可获得性</li>
-<li>便利性/实用性</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>2020/09/17</p>
-<p> 第一次作业车一晗组框架：</p>
-<p>竞品简介、用户群体、价值主张、关键业务、</p>
-<p>收入来源、成本结构、推广模式、重要合作</p>
-</blockquote>
-<p>渠道通路</p>
-<ul>
-<li>一家企业如何同它的客户群体达成沟通并建立联系，以向对方传递自身的价值主张<ul>
-<li>企业与客户交互体系</li>
-</ul>
-</li>
-<li>渠道的五个阶段与运营方式<ul>
-<li><strong>知名度-评价-购买-传递-售后</strong>（三包，评论）</li>
-<li>一个渠道可以包含一个或全部五个阶段</li>
-<li>一个组织可选用自有渠道、合作方渠道或混用</li>
-</ul>
-</li>
-</ul>
-<p>客户关系</p>
-<ul>
-<li>一家企业针对某一个客户群体所建立的客户关系模型<ul>
-<li>人员维护 VS 自动化设备</li>
-<li>动机：开发新客户、留住原客户、增加销售量或客单价</li>
-</ul>
-</li>
-<li>客户关系类型<ul>
-<li>私人服务</li>
-<li>专属私人服务</li>
-<li>自助服务</li>
-<li>自动化服务</li>
-<li>社区</li>
-<li>客户共同创造</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>2020/09/21</p>
-<p>课堂讨论：被“懂王”祝福和逼捐的TK，起诉成功且改名的WeChat</p>
-</blockquote>
-<p>收入来源</p>
-<ul>
-<li>企业从每一个客户群体获得的现金收益（扣除成本的利润）<ul>
-<li>探索用户真正愿意付费的点</li>
-<li>两类收益来源：一次性交易收入、持续收入</li>
-<li>定价机制<ul>
-<li>固定（基于静态变量）</li>
-<li>浮动（基于动态变量）</li>
-<li>三级价格歧视（差异定价）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>收入来源方式<ul>
-<li>资产销售</li>
-<li>使用费</li>
-<li>会员费</li>
-<li>租赁</li>
-<li>许可使用费</li>
-<li>经纪人佣金</li>
-<li>广告费</li>
-</ul>
-</li>
-</ul>
-<p>核心资源</p>
-<ul>
-<li>保证一个商业模式顺利运行所需的最重要的资产<ul>
-<li>用于：价值主张的创造与提供、开拓市场、维护客户关系并获益</li>
-<li>可以“拥有”或“合作”</li>
-</ul>
-</li>
-<li>类型<ul>
-<li>实物资源</li>
-<li>知识性资源</li>
-<li>人力资源</li>
-<li>金融资源</li>
-</ul>
-</li>
-</ul>
-<p>关键业务</p>
-<ul>
-<li>保障其商业模式正常运行所需做的最重要的事情</li>
-<li>类型<ul>
-<li>生成</li>
-<li>解决方案</li>
-<li>平台/网络</li>
-</ul>
-</li>
-</ul>
-<p>重要合作</p>
-<ul>
-<li>保证一个商业模式顺利运行所需的供应商和合作伙伴网络<ul>
-<li>非竞争者之间的战略联盟</li>
-<li>竞争者之间的战略合作</li>
-<li>新业务的合资公司</li>
-<li>稳定供应关系的供应商和采购商</li>
-</ul>
-</li>
-<li>合作动机</li>
-</ul>
-<p>成本结构：</p>
-<ul>
-<li>运营一个商业模式所发生的全部成本</li>
-<li>导向</li>
-<li>特点</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">需求设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/07/%E9%9C%80%E6%B1%82%E8%AE%BE%E8%AE%A1%E7%BA%B2%E8%A6%81/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-软工二知识点整理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/03/%E8%BD%AF%E5%B7%A5%E4%BA%8C%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/">软工二知识点整理</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/03/%E8%BD%AF%E5%B7%A5%E4%BA%8C%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/" class="archive-article-date">
-  	<time datetime="2020-09-03T06:11:36.744Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="软工二知识点整理"><a href="#软工二知识点整理" class="headerlink" title="软工二知识点整理"></a>软工二知识点整理</h1>
-        
-          <a class="article-more-a" href="/2020/09/03/%E8%BD%AF%E5%B7%A5%E4%BA%8C%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">软工二</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/03/%E8%BD%AF%E5%B7%A5%E4%BA%8C%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
